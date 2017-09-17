@@ -1,0 +1,127 @@
+{
+  "archives": [
+    {
+      "date": 1504224000000,
+      "status": [
+        "[Github](http://google.fr/)"
+      ],
+      "role": [
+        "iOS development",
+        "Concept"
+      ],
+      "title": "Wider"
+    },
+    {
+      "date": 1504224000000,
+      "status": [
+        "[See it live](http://google.fr/)"
+      ],
+      "role": [
+        "Interactive development"
+      ],
+      "title": "Maxime Rimbert"
+    },
+    {
+      "date": 1504224000000,
+      "status": [
+        "~~See it live~~"
+      ],
+      "role": [
+        "Interactive development\nat Publicis Nurun"
+      ],
+      "title": "Dahlia Divin"
+    }
+  ],
+  "entries": [
+    {
+      "date": 1504224000000,
+      "role": [],
+      "status": [],
+      "title": "After two years of great times and rewarding collaborations in Copenhagen, I’ll be moving on to the next exciting chapter of my life and career in NYC. I am looking for creative opportunities as front-end developer of meaningful, content-focussed and human-centred digital products. If you’d hear of any interesting opportunities or would like to talk about a potential collaboration, [please get in touch](mailto:hello@sylvainreucherand.fr)!"
+    },
+    {
+      "content": {
+        "paragraphs": [
+          "Released date: september 2017."
+        ]
+      },
+      "date": 1504224000000,
+      "role": [
+        "Interactive development lead\nat Spring/Summer"
+      ],
+      "status": [
+        "*Soon*"
+      ],
+      "title": "Simply Chocolate"
+    },
+    {
+      "content": {
+        "paragraphs": [
+          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
+        ]
+      },
+      "date": 1504224000000,
+      "role": [
+        "Interactive development lead\nat Spring/Summer"
+      ],
+      "status": [
+        "[See it live](http://google.fr/)"
+      ],
+      "title": "Beoplay Unfiltred H4"
+    },
+    {
+      "content": {
+        "paragraphs": [
+          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
+        ]
+      },
+      "date": 1504224000000,
+      "role": [
+        "Interactive development\nat Spring/Summer"
+      ],
+      "status": [
+        "[See it live](http://google.fr/)"
+      ],
+      "title": "Beoplay M5"
+    },
+    {
+      "date": 1504224000000,
+      "role": [],
+      "status": [],
+      "title": "Got hired at Spring/Summer!"
+    },
+    {
+      "date": 1504224000000,
+      "role": [],
+      "status": [],
+      "title": "Moved from Paris to Copenhagen and joined the e-Types digital team for 3 months."
+    },
+    {
+      "content": {
+        "paragraphs": [
+          "Mirage is an interactive short movie about transhumanism and the place that human gives to the technology in his life. It was my graduation project at Gobelins, l’École de l’Image, Paris — France."
+        ]
+      },
+      "date": 1504224000000,
+      "role": [
+        "Interactive development",
+        "Concept",
+        "Film direction",
+        "Product design"
+      ],
+      "status": [
+        "[Github](http://google.fr/)",
+        "[Trailer](http://google.fr/)"
+      ],
+      "title": "Mirage"
+    }
+  ],
+  "meta": {
+    "description": "",
+    "image": "",
+    "keywords": "",
+    "title": "Sylvain Reucherand — Interactive developer",
+    "twitter": "",
+    "url": ""
+  }
+}

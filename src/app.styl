@@ -1,0 +1,95 @@
+@import 'normalize.css/normalize.css';
+
+@import './grid/grid.styl';
+@import './utils/text.styl';
+
+body {
+  primary();
+  background-color: #efeeec;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+}
+
+h1,
+h2,
+h3 { margin-top: 0; }
+h1 {
+  secondary();
+}
+h2,
+h3 {
+  large_title();
+}
+
+navigation {
+  left: 0;
+  position: fixed;
+  right: 0;
+  
+  for breakpoint, value in --outer-margins {
+    +mq(breakpoint) {
+      top: unit(value, 'px');
+    }
+  }
+}
+
+.content {
+  &__archive {
+    margin-bottom: 3.94em;
+    
+    &:last-child { margin-bottom: 0; }
+  }
+  
+  &__main {
+    margin-bottom: 10.94em;
+    
+    div {
+      margin-bottom: 3.06em;
+      
+      &:last-child,
+      *:last-child { margin-bottom: 0; }
+      
+      p {
+        margin-bottom: 1em;
+        margin-top: 0;
+      }
+    }
+  }
+  
+  &__meta { margin-bottom: 0.9em; }
+  
+  &__title {
+    h3 { margin-bottom: 0.7em; }
+  }
+  
+  &--light {
+    color: #a9a9a9;
+    white-space: nowrap;
+  }
+  
+  &--secondary {
+    secondary();
+    white-space: nowrap;
+  }
+}
+
+#archives {
+  background-color: #1e2e5a;
+  color: #ffffff;
+  overflow: hidden;
+  padding-bottom: 5.06em;
+  
+  h2 { margin-bottom: 0.84em; }
+  
+  for breakpoint, value in --outer-margins {
+    +mq(breakpoint) {
+      padding-top: unit(value, 'px');
+    }
+  }
+}
+
+#recent { padding-top: 21.76em; }

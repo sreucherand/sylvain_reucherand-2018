@@ -1,0 +1,76 @@
+@import '../utils/media-queries.styl';
+
+@font-face {
+  font-family: 'Sequel Sans Body Text';
+  src: url('/static/fonts/sequel_sans-light_body_text.woff2') format('woff2'),
+    url('/static/fonts/sequel_sans-light_body_text.woff') format('woff'),
+    url('/static/fonts/sequel_sans-light_body_text.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+  
+@font-face {
+  font-family: 'Sequel Sans Body Text';
+  src: url('/static/fonts/sequel_sans-book_body_text.woff2') format('woff2'),
+    url('/static/fonts/sequel_sans-book_body_text.woff') format('woff'),
+    url('/static/fonts/sequel_sans-book_body_text.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sequel Sans Body Text';
+  src: url('/static/fonts/sequel_sans-book_oblique_body_text.woff2') format('woff2'),
+    url('/static/fonts/sequel_sans-book_oblique_body_text.woff') format('woff'),
+    url('/static/fonts/sequel_sans-book_oblique_body_text.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Sequel Sans Headline';
+  src: url('/static/fonts/sequel_sans-light_headline.woff2') format('woff2'),
+    url('/static/fonts/sequel_sans-light_headline.woff') format('woff'),
+    url('/static/fonts/sequel_sans-light_headline.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+large_title() {
+  font-family: 'Sequel Sans Headline', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.42em;
+  
+  +sm() { font-size: 24px; }
+  +md() { font-size: 34px; }
+  +lg() { font-size: 50px; }
+}
+
+primary() {
+  font-family: 'Sequel Sans Body Text', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.76em;
+  
+  +md() { font-size: 14px; }
+  +lg() { font-size: 17px; }
+}
+
+secondary() {
+  font-family: 'Sequel Sans Body Text', sans-serif;
+  font-size: 7px;
+  font-weight: normal;
+  letter-spacing: 0.14em;
+  line-height: 1.83em;
+  text-transform: uppercase;
+  
+  +md() {
+    font-size: 9px;
+    letter-spacing: 0.17em;
+  }
+  +lg() {
+    font-size: 12px;
+    letter-spacing: 0.21em;
+  }
+}

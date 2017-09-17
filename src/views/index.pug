@@ -1,0 +1,84 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title= meta.title
+        meta(name='description' content='#{meta.description}')
+        meta(name='keywords' content='#{meta.keywords}')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+        meta(property='og:title' content='#{meta.title}')
+        meta(property='og:image' content='#{meta.image}')
+        meta(property='og:url' content='#{meta.url}')
+        meta(property='og:site-name' content='#{meta.title}')
+
+        meta(name='twitter:card' content='summary_large_image')
+        meta(name='twitter:site' content='#{meta.twitter}')
+        meta(name='twitter:creator' content='#{meta.twitter}')
+        meta(name='twitter:title' content='#{meta.title}')
+        meta(name='twitter:description' content='#{meta.description}')
+        meta(name='twitter:image:src' content='#{meta.image}')
+
+        link(rel='stylesheet' href='/static/app.bundle.css')
+        link(rel='shortcut icon' href='/static/media/favicon.ico')
+
+    body
+      navigation
+        div.grid
+          div.grid__row
+            div.grid__row__column.grid__row__column--xs-8
+              h1
+                | Sylvain Reucherand
+                br
+                | Front-end developer
+
+      section#recent
+        .grid
+          each entry in entries
+            div.grid__row.content__meta
+              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2.grid__row__column--sm-offset-2
+                div.content--secondary= moment(entry.date).format('MMM YYYY')
+              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
+                div.content--secondary
+                  each status in entry.status
+                    div!= marked(status)
+              div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2
+                div.content--light.content--secondary
+                  each role in entry.role
+                    div!= nl2br(role)
+
+            div.grid__row.content__main
+              div.grid__row__column.grid__row__column--xs-8
+                h3!= marked(entry.title)
+              
+              if entry.content && entry.content.paragraphs
+                div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-4.grid__row__column--sm-offset-2
+                  each paragraph in entry.content.paragraphs
+                    p= paragraph
+
+              if entry.content && entry.content.gallery
+                div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-4.grid__row__column--sm-offset-2
+                  div
+                    each paragraph in entry.content.paragraphs
+                      p= paragraph
+
+      section#archives
+        div.grid
+          div.grid__row
+            div.grid__row__column.grid__row__column--xs-8
+              h2 Archives
+
+          each entry in archives
+            div.grid__row.content__archive
+              div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-2
+                div.content--secondary= entry.title
+              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
+                div.content--secondary= moment(entry.date).format('MMM YYYY')
+              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
+                div.content--secondary
+                  each status in entry.status
+                    div!= marked(status)
+              div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2
+                div.content--secondary
+                  each role in entry.role
+                    div!= nl2br(role)

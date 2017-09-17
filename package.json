@@ -1,0 +1,34 @@
+{
+  "name": "sylvain-reucherand-landing-page",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.14.0",
+    "browser-sync": "^2.18.13",
+    "cssnano-cli": "^1.0.5",
+    "marked": "^0.3.6",
+    "moment": "^2.18.1",
+    "nl2br": "^0.0.3",
+    "nodemon": "^1.12.1",
+    "normalize.css": "^7.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "browser": "browser-sync start --files './static/*' --files './src/views/*' --no-ghost-mode --no-open --no-notify -p localhost:3401 --port 3402",
+    "build": "npm run build:css | npm run build:views",
+    "build:css": "stylus ./src/app.styl --include node_modules/ --include-css --print | cssnano > ./static/app.bundle.css",
+    "build:views": "pug ./src/views/index.pug --obj ./src/data/expose.js --out ./static/",
+    "prebuild": "rm static/*.{css,html}",
+    "prestart": "rm static/*.{css,html}",
+    "server": "nodemon --watch ./server.js --watch ./src/data server.js",
+    "start": "npm run browser | npm run server | npm run watch:css",
+    "watch:css": "stylus ./src/app.styl --include node_modules/ --include-css --out ./static/app.bundle.css --use autoprefixer-stylus --watch"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.4"
+  }
+}

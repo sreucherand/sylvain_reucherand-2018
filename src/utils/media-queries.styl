@@ -1,0 +1,13 @@
+@import '../utils/constants.styl';
+
+mq(mq = called-from, block = block) {
+  @media all and (min-width: --breakpoints[mq]) {
+    {block}
+  }
+}
+
+for breakpoint in keys(--breakpoints) {
+  define(breakpoint, @() {
+    mq(, block)
+  })
+}
