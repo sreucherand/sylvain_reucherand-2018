@@ -124,6 +124,8 @@ class GalleryComponent extends PureComponent {
   }
 
   render () {
+    const transform = `translate(${-this.state.progress * this.state.width}px)`;
+
     return [
       <div
         key="controls"
@@ -161,13 +163,13 @@ class GalleryComponent extends PureComponent {
               ref={measureRef}>
               <div
                 className="gallery__inner"
-                ref={this.handleRef}
-                style={{transform: `translateX(${-this.state.progress * this.state.width}px)`}}>
+                ref={this.handleRef}>
                 {
                   this.props.data.map((item, index) => (
                     <div
                       key={index}
-                      className="gallery__item">
+                      className="gallery__item"
+                      style={{transform: transform, webkitTransform: transform}}>
                       <div style={{backgroundImage: `url('${item.image}')`, opacity: includes(this.state.cache, item.image) ? 1 : 0}} />
                     </div>
                   ))

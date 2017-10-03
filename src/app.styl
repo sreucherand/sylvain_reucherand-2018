@@ -104,7 +104,11 @@ navigation {
     caption();
     color: transparent;
     position: relative;
+    margin-top: 12px;
     width: 100%;
+    
+    +sm() { margin-top: 10px; }
+    +lg() { margin-top: 12px; }
     
     &__item {
       color: #a9a9a9;
@@ -118,7 +122,7 @@ navigation {
   &__controls {
     align-items: center;
     display: flex;
-    height: 100%;
+    flex-grow: 1;
     position: relative;
     z-index: 5;
     
@@ -170,13 +174,8 @@ navigation {
   
   &__inner {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
-    margin-bottom: 12px;
     width: 100%;
-  
-    +sm() { margin-bottom: 10px; }
-    +lg() { margin-bottom: 12px; }
   }
   
   &__item {
