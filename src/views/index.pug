@@ -62,6 +62,12 @@ html
                     each paragraph in entry.content.paragraphs
                       p= paragraph
 
+              if (entry.gallery.length > 1)
+                div.grid__row__column.grid__row__column--xs-8
+                  div.grid__row(data-interactive="gallery")
+                    script.
+                      !{JSON.stringify(entry.gallery)}
+
       section#archives
         div.grid
           div.grid__row
@@ -82,3 +88,5 @@ html
                 div.content--secondary
                   each role in entry.role
                     div!= nl2br(role)
+
+    script(src="/static/app.bundle.js")

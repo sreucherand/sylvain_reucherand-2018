@@ -3,6 +3,10 @@
 @import './grid/grid.styl';
 @import './utils/text.styl';
 
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   primary();
   background-color: #efeeec;
@@ -29,6 +33,7 @@ navigation {
   left: 0;
   position: fixed;
   right: 0;
+  z-index: 10;
   
   for breakpoint, value in --outer-margins {
     +mq(breakpoint) {
@@ -47,11 +52,11 @@ navigation {
   &__main {
     margin-bottom: 10.94em;
     
-    div {
+    > div {
       margin-bottom: 3.06em;
       
       &:last-child,
-      *:last-child { margin-bottom: 0; }
+      > *:last-child { margin-bottom: 0; }
       
       p {
         margin-bottom: 1em;
@@ -93,3 +98,108 @@ navigation {
 }
 
 #recent { padding-top: 21.76em; }
+
+.gallery {
+  &__caption {
+    caption();
+    color: transparent;
+    position: relative;
+    width: 100%;
+    
+    &__item {
+      color: #a9a9a9;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  
+  &__controls {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    
+    +sm() { justify-content: center; }
+    
+    &__control {
+      cursor: pointer;
+      margin-bottom: 18px;
+      margin-right: 22px;
+      user-select: none;
+      
+      +sm() { margin: 0 7px; }
+      
+      svg {
+        display: block;
+        height: 20px;
+        stroke: #000000;
+        width: 10px;
+        transition: stroke 400ms;
+      }
+      
+      &--disabled {
+        cursor: auto;
+        
+        svg { stroke: #a9a9a9; }
+      }
+    }
+    
+    +sm() {
+      &:before {
+        background-color: #efeeec;
+        bottom: -1px;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: -1px;
+        width: 50vw;
+        z-index: -1;
+      
+        for breakpoint, value in --gutters {
+          +mq(breakpoint) {
+            right: unit(value * -1, 'px');
+          }
+        }
+      }
+    }
+  }
+  
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 12px;
+    width: 100%;
+  
+    +sm() { margin-bottom: 10px; }
+    +lg() { margin-bottom: 12px; }
+  }
+  
+  &__item {
+    background-color: #e8e7e4;
+    flex-basis: 100%;
+    flex-shrink: 0;
+    
+    for breakpoint, value in --gutters {
+      +mq(breakpoint) {
+        margin-right: unit(value, 'px');
+      }
+    }
+    
+    div {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      padding-top: 56.25%;
+      transition: opacity 400ms;
+      
+      img { display: none; }
+    }
+  }
+}
+  

@@ -3,7 +3,17 @@
     {
       "date": 1504224000000,
       "status": [
-        "[Github](http://google.fr/)"
+        "[Live](http://maximerimbert.fr/)"
+      ],
+      "role": [
+        "Interactive development"
+      ],
+      "title": "Maxime Rimbert"
+    },
+    {
+      "date": 1504224000000,
+      "status": [
+        "[Github](https://github.com/sreucherand/reuters-wider)"
       ],
       "role": [
         "iOS development",
@@ -14,17 +24,7 @@
     {
       "date": 1504224000000,
       "status": [
-        "[See it live](http://google.fr/)"
-      ],
-      "role": [
-        "Interactive development"
-      ],
-      "title": "Maxime Rimbert"
-    },
-    {
-      "date": 1504224000000,
-      "status": [
-        "~~See it live~~"
+        "~~Live~~"
       ],
       "role": [
         "Interactive development\nat Publicis Nurun"
@@ -35,6 +35,7 @@
   "entries": [
     {
       "date": 1504224000000,
+      "gallery": [],
       "role": [],
       "status": [],
       "title": "After two years of great times and rewarding collaborations in Copenhagen, I’ll be moving on to the next exciting chapter of my life and career in NYC. I am looking for creative opportunities as front-end developer of meaningful, content-focussed and human-centred digital products. If you’d hear of any interesting opportunities or would like to talk about a potential collaboration, [please get in touch](mailto:hello@sylvainreucherand.fr)!"
@@ -42,15 +43,42 @@
     {
       "content": {
         "paragraphs": [
-          "Released date: september 2017."
+          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message.",
+          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
         ]
       },
       "date": 1504224000000,
+      "gallery": [
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Interactions with a time out."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "A ipsa, dignissimos idt."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "Quod, at? Veritatis corrupti."
+        }
+      ],
       "role": [
         "Interactive development lead\nat Spring/Summer"
       ],
       "status": [
-        "*Soon*"
+        "[Live](https://simplychocolate.dk/)"
       ],
       "title": "Simply Chocolate"
     },
@@ -60,12 +88,40 @@
           "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
         ]
       },
-      "date": 1504224000000,
+      "date": 1485907200000,
+      "gallery": [
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Interactions with a time out."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "A ipsa, dignissimos idt."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "Quod, at? Veritatis corrupti."
+        }
+      ],
       "role": [
         "Interactive development lead\nat Spring/Summer"
       ],
       "status": [
-        "[See it live](http://google.fr/)"
+        "[Live](https://www.beoplay.com/landingpages/beoplayh4)",
+        "[Awwwards](https://www.awwwards.com/sites/beoplay-h4-unfiltered)",
+        "[FWA](https://thefwa.com/cases/beoplay-h4-unfiltered)"
       ],
       "title": "Beoplay Unfiltred H4"
     },
@@ -75,26 +131,63 @@
           "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
         ]
       },
-      "date": 1504224000000,
+      "date": 1480550400000,
+      "gallery": [
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Interactions with a time out."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "A ipsa, dignissimos idt."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "Quod, at? Veritatis corrupti."
+        }
+      ],
       "role": [
         "Interactive development\nat Spring/Summer"
       ],
       "status": [
-        "[See it live](http://google.fr/)"
+        "[Live](https://www.beoplay.com/landingpages/beoplaym5)",
+        "[Awwwards](https://www.awwwards.com/sites/beoplay-m5)",
+        "[FWA](https://thefwa.com/cases/beoplay-m5-connecting-spaces)"
       ],
       "title": "Beoplay M5"
     },
     {
-      "date": 1504224000000,
+      "date": 1451606400000,
+      "gallery": [],
       "role": [],
       "status": [],
       "title": "Got hired at Spring/Summer!"
     },
     {
-      "date": 1504224000000,
+      "date": 1443657600000,
+      "gallery": [],
       "role": [],
       "status": [],
       "title": "Moved from Paris to Copenhagen and joined the e-Types digital team for 3 months."
+    },
+    {
+      "date": 1433116800000,
+      "gallery": [],
+      "role": [],
+      "status": [],
+      "title": "Graduated from interactive design at Gobelins — l'école de l'image, Paris."
     },
     {
       "content": {
@@ -102,7 +195,33 @@
           "Mirage is an interactive short movie about transhumanism and the place that human gives to the technology in his life. It was my graduation project at Gobelins, l’École de l’Image, Paris — France."
         ]
       },
-      "date": 1504224000000,
+      "date": 1433116800000,
+      "gallery": [
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Interactions with a time out."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "A ipsa, dignissimos idt."
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/000/fff",
+          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/333/fff",
+          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
+        },
+        {
+          "image": "https://dummyimage.com/1024x576/666/fff",
+          "title": "Quod, at? Veritatis corrupti."
+        }
+      ],
       "role": [
         "Interactive development",
         "Concept",
@@ -110,8 +229,7 @@
         "Product design"
       ],
       "status": [
-        "[Github](http://google.fr/)",
-        "[Trailer](http://google.fr/)"
+        "[Trailer](http://mirage.sylvainreucherand.fr/)"
       ],
       "title": "Mirage"
     }
