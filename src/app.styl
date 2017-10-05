@@ -134,7 +134,7 @@ navigation {
       margin-right: 22px;
       user-select: none;
       
-      +sm() { margin: 0 7px; }
+      +sm() { margin: 0 11px; }
       
       svg {
         display: block;
@@ -193,11 +193,19 @@ navigation {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      opacity: 0;
+      overflow: hidden;
       padding-top: 56.25%;
+      position: relative;
       transition: opacity 400ms;
       
-      img { display: none; }
+      video {
+        height: calc(100% + 1px);
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: calc(100% + 1px);
+      }
     }
   }
 }

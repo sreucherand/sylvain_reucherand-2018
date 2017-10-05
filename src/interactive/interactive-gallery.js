@@ -1,3 +1,4 @@
+import assign from 'lodash/assign';
 import clamp from 'lodash/clamp';
 import classnames from 'classnames';
 import Hammer from 'hammerjs';
@@ -12,6 +13,53 @@ import Resize from '../resize/resize';
 import Spring from '../spring/spring';
 
 const format = (index, length, title) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${title}`;
+
+class Player extends PureComponent {
+
+  constructor (props) {
+    super(props);
+
+    this.handleRef = this.handleRef.bind(this);
+  }
+
+  handleRef (node) {
+    if (!node || this.video !== undefined) {
+      return;
+    }
+
+    this.video = node;
+  }
+
+  componentWillReceiveProps (props) {
+    if (this.video === undefined) {
+      return;
+    }
+
+    if (props.play === true && this.props.play === false) {
+      this.video.play();
+
+      return;
+    }
+
+    if (props.play === false && this.props.play === true) {
+      this.video.pause();
+
+      return;
+    }
+  }
+
+  render () {
+    const props = assign({}, this.props, {
+      autoPlay: this.props.play,
+      ref: this.handleRef,
+    });
+
+    delete props.play;
+
+    return React.createElement('video', props);
+  }
+
+}
 
 class GalleryComponent extends PureComponent {
 
@@ -54,9 +102,11 @@ class GalleryComponent extends PureComponent {
     this.gestureManager.on('panend pancancel', this.handleRelease.bind(this));
 
     for (let item of this.props.data) {
-      const image = new Image();
-      image.onload = () => this.setState(state => ({cache: [...state.cache, item.image]}));
-      image.src = item.image;
+      if (item.media.type === 'image') {
+        const image = new Image();
+        image.onload = () => this.setState(state => ({cache: [...state.cache, item.media.src]}));
+        image.src = item.media.src;
+      }
     }
   }
 
@@ -169,8 +219,26 @@ class GalleryComponent extends PureComponent {
                     <div
                       key={index}
                       className="gallery__item"
-                      style={{transform: transform, webkitTransform: transform}}>
-                      <div style={{backgroundImage: `url('${item.image}')`, opacity: includes(this.state.cache, item.image) ? 1 : 0}} />
+                      style={{transform: transform, WebkitTransform: transform}}>
+                      {
+                        item.media.type === 'image' && (
+                          <div style={{backgroundImage: `url('${item.media.src}')`, opacity: includes(this.state.cache, item.media.src) ? 1 : 0}} />
+                        )
+                      }
+
+                      {
+                        item.media.type === 'video' && (
+                          <div>
+                            <Player
+                              loop
+                              muted
+                              playsInline
+                              play={index === this.state.index}
+                              preload="auto"
+                              src={item.media.src} />
+                          </div>
+                        )
+                      }
                     </div>
                   ))
                 } 
@@ -199,7 +267,7 @@ class GalleryComponent extends PureComponent {
 
           {
             this.props.data.map((item, index, items) => {
-              const progress = rebound.MathUtil.mapValueInRange(clamp(this.state.progress, 0, items.length - 1), index - 0.5, index + 0.5, 1, -1);
+              const progress = rebound.MathUtil.mapValueInRange(clamp(this.state.progress, 0, items.length - 1), index - 0.25, index + 0.25, 1, -1);
               const opacity = clamp(1 - Math.abs(progress), 0, 1);
 
               return (
