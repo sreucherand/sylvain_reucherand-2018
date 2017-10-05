@@ -43,76 +43,78 @@
     {
       "content": {
         "paragraphs": [
-          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message.",
-          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
+          "Simply Chocolate is based in Copenhagen. Up here it’s too cold to grow cocoa beans. But it´s hot enough to have a love affair with great chocolate.",
+          "And a great chocolate bar deserves a great website. So we baked a fresh and tasty 2D webGL experience, where you scroll, drag, unwrap, crack… the chocolate and its ingredients. You can almost smell it. Front-end wise, the bars are dynamically pre-rendered at runtime, from a single grayscale packaging texture and colours outputted by the CMS. A fragment shader applies the gradient map to the texture, which is then cut into several pieces to make the opening possible. The CMS has also been configured to pack assets into sprite sheets."
         ]
       },
       "date": 1504224000000,
       "gallery": [
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Interactions with a time out."
+          "media": {
+            "src": "/static/media/simply_chocolate-04-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Homepage. Scroll between chocolate bars."
         },
         {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+          "media": {
+            "src": "/static/media/simply_chocolate-03-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Being tempted to open a bar. Ingredients are scrolling indefinitely. Patterns are dynamically generated, following pre-defined layout rules."
         },
         {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "A ipsa, dignissimos idt."
+          "media": {
+            "src": "/static/media/simply_chocolate-01-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Unwrapping."
         },
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
+          "media": {
+            "src": "/static/media/simply_chocolate-05-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Product page. Bar cracks and reveals its inside composition."
         },
         {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "Quod, at? Veritatis corrupti."
+          "media": {
+            "src": "/static/media/simply_chocolate-02-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Next page transition. "
         }
       ],
       "role": [
         "Interactive development lead\nat Spring/Summer"
       ],
       "status": [
-        "[Live](https://simplychocolate.dk/)"
+        "[Live](https://simplychocolate.dk/)",
+        "[Awwwards](https://www.awwwards.com/sites/simply-chocolate)"
       ],
       "title": "Simply Chocolate"
     },
     {
       "content": {
         "paragraphs": [
-          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
+          "Beoplay introduces Beoplay H4, a wireless, over-ear headphones with a focus on pure essentials. The site is a journey into customers life, told without filters. It features 3 short stories of 3 different figures, talking of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered would be featured on the site and then join the unfiltered journey."
         ]
       },
       "date": 1485907200000,
       "gallery": [
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Interactions with a time out."
+          "media": {
+            "src": "/static/media/beoplay_h4-01-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Carousel navigation. Hover to preview a story. Opening."
         },
         {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "A ipsa, dignissimos idt."
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "Quod, at? Veritatis corrupti."
+          "media": {
+            "src": "/static/media/beoplay_h4-02-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Next story transition. Attention to details."
         }
       ],
       "role": [
@@ -128,34 +130,24 @@
     {
       "content": {
         "paragraphs": [
-          "The H4 concept is anchored in the simplicity and purity of the product design and a stripped back to essentials look with a high level of confidence. Almost naked with simple product images and pared-back descriptions. Less is really more. Unfiltered is the key message."
+          "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces together. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
         ]
       },
       "date": 1480550400000,
       "gallery": [
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Interactions with a time out."
+          "media": {
+            "type": "video",
+            "src": "/static/media/beoplay_m5-02-compressed.mp4"
+          },
+          "title": "Wave composed of white dots. Attracted by cursor and moving according to the carousel."
         },
         {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "A ipsa, dignissimos idt."
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "Quod, at? Veritatis corrupti."
+          "media": {
+            "type": "video",
+            "src": "/static/media/beoplay_m5-01-compressed.mp4"
+          },
+          "title": "Sound emission. Speed and frequency depending on the volume."
         }
       ],
       "role": [
@@ -192,34 +184,39 @@
     {
       "content": {
         "paragraphs": [
-          "Mirage is an interactive short movie about transhumanism and the place that human gives to the technology in his life. It was my graduation project at Gobelins, l’École de l’Image, Paris — France."
+          "Mirage is an interactive short film I directed as part of my final degree diploma at Gobelins — Paris.",
+          "Mirage pictures a world where humans are assisted by a technology which helps them taking decisions. They rely on it, they trust it so much, that they might start losing a bit of humanity. Is there a limit to transhumanism? Can the technology take over your own consciousness?"
         ]
       },
       "date": 1433116800000,
       "gallery": [
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Interactions with a time out."
+          "media": {
+            "src": "/static/media/mirage-01-compressed.mp4",
+            "type": "video"
+          },
+          "title": "Look and feel of the experience. Interaction example."
         },
         {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ipsa, dignissimos id, est iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo! Unde!"
+          "media": {
+            "src": "/static/media/mirage-01.jpg",
+            "type": "image"
+          },
+          "title": "Indoor behind the scene."
         },
         {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "A ipsa, dignissimos idt."
+          "media": {
+            "src": "/static/media/mirage-03.jpg",
+            "type": "image"
+          },
+          "title": "3D render before building the installation."
         },
         {
-          "image": "https://dummyimage.com/1024x576/000/fff",
-          "title": "Eet iure amet incidunt ea vitae nobis quos officia maiores dolor nihil asperiores porro, quis ex nemo!"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/333/fff",
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit illo veniam magni tempora dicta natus quasi fuga?"
-        },
-        {
-          "image": "https://dummyimage.com/1024x576/666/fff",
-          "title": "Quod, at? Veritatis corrupti."
+          "media": {
+            "src": "/static/media/mirage-02.jpg",
+            "type": "image"
+          },
+          "title": "Installation is built and is being tested."
         }
       ],
       "role": [
@@ -235,11 +232,14 @@
     }
   ],
   "meta": {
-    "description": "",
-    "image": "",
-    "keywords": "",
+    "description": "Hello, I'm Sylvain Reucherand, a 24 years old interactive developer based in Copenhagen – Denmark.",
+    "image": {
+      "fb": "/static/media/fb.jpg",
+      "twitter": "/static/media/twitter.jpg"
+    },
+    "keywords": "sylvain, reucherand, interactive, developer, front",
     "title": "Sylvain Reucherand — Interactive developer",
-    "twitter": "",
-    "url": ""
+    "twitter": "@sreucherand",
+    "url": "http://sylvainreucherand.fr/"
   }
 }
