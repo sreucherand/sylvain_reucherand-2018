@@ -11,4 +11,5 @@ module.exports = Object.assign({}, require('./data'), {
   marked: marked,
   moment: require('moment'),
   nl2br: require('nl2br'),
+  url: require('url'),
 });
