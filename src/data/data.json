@@ -38,13 +38,13 @@
       "gallery": [],
       "role": [],
       "status": [],
-      "title": "After two years of great times and rewarding collaborations in Copenhagen, I’ll be moving on to the next exciting chapter of my life and career in NYC. I am looking for creative opportunities as front-end developer of meaningful, content-focussed and human-centred digital products. If you’d hear of any interesting opportunities or would like to talk about a potential collaboration, [please get in touch](mailto:hello@sylvainreucherand.fr)!"
+      "title": "After two years of great times and rewarding collaborations in Copenhagen, I’ll be moving on to the next exciting chapter of my life and career in NYC. I am looking for opportunities as creative front-end developer of meaningful, content-focused and human-centered digital products. If you’d hear of any interesting opportunities or would like to talk about a potential collaboration, [please get in touch](mailto:hello@sylvainreucherand.fr)!"
     },
     {
       "content": {
         "paragraphs": [
           "Simply Chocolate is based in Copenhagen. Up here it’s too cold to grow cocoa beans. But it´s hot enough to have a love affair with great chocolate.",
-          "And a great chocolate bar deserves a great website. So we baked a fresh and tasty 2D webGL experience, where you scroll, drag, unwrap, crack… the chocolate and its ingredients. You can almost smell it. Front-end wise, the bars are dynamically pre-rendered at runtime, from a single grayscale packaging texture and colours outputted by the CMS. A fragment shader applies the gradient map to the texture, which is then cut into several pieces to make the opening possible. The CMS has also been configured to pack assets into sprite sheets."
+          "And a great chocolate bar deserves a great website. So we baked a fresh and tasty 2D webGL experience, where you scroll, drag, unwrap and crack... the chocolate and its ingredients. You can almost smell it. Front-end wise, the bars are dynamically pre-rendered at runtime, from a single grayscale packaging texture and colours output by the CMS. A fragment shader applies the gradient map to the texture, which is then cut into several pieces to make the opening possible. The CMS has also been configured to pack assets into sprite sheets."
         ]
       },
       "date": 1504224000000,
@@ -97,7 +97,7 @@
     {
       "content": {
         "paragraphs": [
-          "Beoplay introduces Beoplay H4, a wireless, over-ear headphones with a focus on pure essentials. The site is a journey into customers life, told without filters. It features 3 short stories of 3 different figures, talking of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered would be featured on the site and then join the unfiltered journey."
+          "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
         ]
       },
       "date": 1485907200000,
@@ -130,7 +130,7 @@
     {
       "content": {
         "paragraphs": [
-          "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces together. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
+          "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
         ]
       },
       "date": 1480550400000,
@@ -165,6 +165,13 @@
       "gallery": [],
       "role": [],
       "status": [],
+      "title": "For 10 months, I got the chance to work on developing and prototyping what will be the next digital products of American Express."
+    },
+    {
+      "date": 1451606400000,
+      "gallery": [],
+      "role": [],
+      "status": [],
       "title": "Got hired at Spring/Summer!"
     },
     {
@@ -185,7 +192,7 @@
       "content": {
         "paragraphs": [
           "Mirage is an interactive short film I directed as part of my final degree diploma at Gobelins — Paris.",
-          "Mirage pictures a world where humans are assisted by a technology which helps them taking decisions. They rely on it, they trust it so much, that they might start losing a bit of humanity. Is there a limit to transhumanism? Can the technology take over your own consciousness?"
+          "Mirage pictures a world where humans are assisted by technology in making decisions. They rely on so much that they might start losing a bit of humanity. Is there a limit to transhumanism? Can technology take over your own consciousness?"
         ]
       },
       "date": 1433116800000,
@@ -229,6 +236,13 @@
         "[Trailer](http://mirage.sylvainreucherand.fr/)"
       ],
       "title": "Mirage"
+    },
+    {
+      "date": 1409529600000,
+      "gallery": [],
+      "role": [],
+      "status": [],
+      "title": "Started studying at Gobelins — l'école de l'image, Paris as interactive designer and joined Publicis Nurun as apprentice interactive developer."
     }
   ],
   "meta": {
