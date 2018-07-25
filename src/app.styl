@@ -12,15 +12,16 @@ body {
   background-color: #efeeec;
 }
 
+* {
+  vertical-align: baseline;
+  margin: 0;
+}
+
 a {
   color: inherit;
-  text-decoration: underline;
   text-decoration-skip: ink;
 }
 
-h1,
-h2,
-h3 { margin-top: 0; }
 h1 {
   secondary();
 }
@@ -42,58 +43,61 @@ navigation {
   }
 }
 
-.content {
-  &__archive {
-    margin-bottom: 3.94em;
-    
-    &:last-child { margin-bottom: 0; }
-  }
-  
+.content {  
   &__main {
     margin-bottom: 10.94em;
-    
-    > div {
-      margin-bottom: 3.06em;
+
+    &__introduction {
+      a {
+        text-decoration: underline;
+      }
+
+      h2 + p {
+        margin-top: 3.06em;
+      }
       
-      &:last-child,
-      > *:last-child { margin-bottom: 0; }
-      
-      p {
-        margin-bottom: 1em;
-        margin-top: 0;
+      p + p {
+        margin-top: 1em;
       }
     }
-  }
-  
-  &__meta { margin-bottom: 0.9em; }
-  
-  &__title {
-    h3 { margin-bottom: 0.7em; }
-  }
-  
-  &--light {
-    color: #a9a9a9;
-    white-space: nowrap;
-  }
-  
-  &--secondary {
-    secondary();
-    white-space: nowrap;
-  }
-}
 
-#archives {
-  background-color: #1e2e5a;
-  color: #ffffff;
-  overflow: hidden;
-  padding-bottom: 5.06em;
-  
-  h2 { margin-bottom: 0.84em; }
-  
-  for breakpoint, value in --outer-margins {
-    +mq(breakpoint) {
-      padding-top: unit(value, 'px');
+    &__metadata {
+      caption();
+
+      a {
+        text-decoration: none;
+
+        &:after {
+          background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='100%' width='100%' viewBox='0 0 5.1 5.1'><polygon points='5.1,0 5.1,3.7 4.1,3.7 4.1,1.7 0.7,5.1 0,4.4 3.4,1 1.4,1 1.4,0'/></svg>");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          content: '';
+          display: inline-block;
+          height: 0.5em;
+          margin-left: 0.5em;
+          position: relative;
+          top: -0.25em;
+          width: 0.5em;
+        }
+      }
+
+      &__title {
+        color: #a9a9a9;
+      }
     }
+
+    &__introduction + &__metadata,
+    &__introduction + &__gallery,
+    &__metadata + &__metadata,
+    &__metadata + &__gallery {
+      margin-top: 3.06em;
+    }
+  }
+  
+  &__date {
+    secondary();
+    margin-bottom: 0.9em;
   }
 }
 

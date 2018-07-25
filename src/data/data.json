@@ -1,248 +1,466 @@
 {
-  "archives": [
-    {
-      "date": 1443657600000,
-      "status": [
-        "[Live](http://maximerimbert.fr/)"
-      ],
-      "role": [
-        "Interactive development"
-      ],
-      "title": "Maxime Rimbert"
-    },
-    {
-      "date": 1420070400000,
-      "status": [
-        "[Github](https://github.com/sreucherand/reuters-wider)"
-      ],
-      "role": [
-        "iOS development",
-        "Concept"
-      ],
-      "title": "Wider"
-    },
-    {
-      "date": 1414800000000,
-      "status": [
-        "~~Live~~"
-      ],
-      "role": [
-        "Interactive development\nat Publicis Nurun"
-      ],
-      "title": "Dahlia Divin"
-    }
-  ],
   "entries": [
     {
-      "date": 1504224000000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "After two years of great times and rewarding collaborations in Copenhagen, I’ll be moving on to the next exciting chapter of my life and career in NYC. I am looking for opportunities as creative front-end developer of meaningful, content-focused and human-centered digital products. If you’d hear of any interesting opportunities or would like to talk about a potential collaboration, [please get in touch](mailto:hello@sylvainreucherand.fr)!"
-    },
-    {
-      "content": {
-        "paragraphs": [
-          "Simply Chocolate is based in Copenhagen. Up here it’s too cold to grow cocoa beans. But it´s hot enough to have a love affair with great chocolate.",
-          "And a great chocolate bar deserves a great website. So we baked a fresh and tasty 2D webGL experience, where you scroll, drag, unwrap and crack... the chocolate and its ingredients. You can almost smell it. Front-end wise, the bars are dynamically pre-rendered at runtime, from a single grayscale packaging texture and colours output by the CMS. A fragment shader applies the gradient map to the texture, which is then cut into several pieces to make the opening possible. The CMS has also been configured to pack assets into sprite sheets."
-        ]
-      },
-      "date": 1504224000000,
+      "title": "Google Cloud Interactive Demo",
       "gallery": [
         {
+          "caption": "Installation contemplation.",
+          "media": {
+            "src": "/static/media/g_suite-01.jpg",
+            "type": "image"
+          }
+        },
+        {
+          "caption": "Passive scene, waiting for the user to interact.",
+          "media": {
+            "src": "/static/media/g_suite-02.jpg",
+            "type": "image"
+          }
+        },
+        {
+          "caption": "Close-up.",
+          "media": {
+            "src": "/static/media/g_suite-03.jpg",
+            "type": "image"
+          }
+        }
+      ],
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1504224000000
+        },
+        {
+          "title": "Links",
+          "type": "links",
+          "value": [
+            {
+              "title": "See the demo",
+              "url": "https://vimeo.com/263198633"
+            },
+            {
+              "title": "Demos",
+              "url": "https://www.stinkstudios.com/work/google-cloud-interactive-demos"
+            },
+            {
+              "title": "Case study",
+              "url": "https://medium.com/stink-studios/the-3-things-we-learned-building-an-8-screens-interactive-installation-7b4eda3a183"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": "Development lead"
+        },
+        {
+          "title": "Agency",
+          "type": "links",
+          "value": [
+            {
+              "title": "Stink Studios",
+              "url": "https://www.stinkstudios.com/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "Disguise D3, Matter.js, Node.js, React, Styled Components"
+        },
+        {
+          "title": "Awards",
+          "type": "links",
+          "value": [
+            {
+              "title": "SOTD – FWA",
+              "url": "https://thefwa.com/cases/google-cloud-interactive-demos"
+            }
+          ]
+        }
+      ],
+      "paragraphs": [
+        "Stink Studios and Google partnered up to create a series of demos showcasing how to push the limits of Google Cloud technology. This was an invite-only event for some of the world’s top C-suite executives.",
+        "G-Suite is a tangible example of how Google Cloud supports collaboration and efficiency. Illustrated and animated entirely in-house, we imagined a Rube Goldberg-inspired visual story that shows how easily teams can turn a rough idea into an executive pitch. Playing out over 8 synchronised screens, guests got to kick off ideation in the beginning by choosing three topics from a Jamboard, follow the workflow from Docs to Slides to Sheets, and then tap “send” at the end to launch the idea into the world."
+      ],
+      "type": "project"
+    },
+    {
+      "date": 1504224000000,
+      "title": "This has been an exciting journey for Simply Chocolate and it’s never ending! The lovely peeps from [Spring/Summer](http://springsummer.dk/) came back home from the annual Awwwards ceremony with a Site of Year for best e-commerce site. Congratulations! We’ve also been published in .net magazine February issue. I talk about some of the challenges I encountered and some of the magic I used to make these chocolate bars so yummy.",
+      "type": "news"
+    },
+    {
+      "date": 1504224000000,
+      "title": "After two years of great times and rewarding collaborations in Copenhagen, I moved on to the next exciting chapter of my life in New York and career at [Stink Studios](https://www.stinkstudios.com/).",
+      "type": "news"
+    },
+    {
+      "gallery": [
+        {
+          "caption": "Homepage. Scroll between chocolate bars.",
           "media": {
             "src": "/static/media/simply_chocolate-04-compressed.mp4",
             "type": "video"
-          },
-          "title": "Homepage. Scroll between chocolate bars."
+          }
         },
         {
+          "caption": "Being tempted to open a bar. Ingredients are scrolling indefinitely. Patterns are dynamically generated, following pre-defined layout rules.",
           "media": {
             "src": "/static/media/simply_chocolate-03-compressed.mp4",
             "type": "video"
-          },
-          "title": "Being tempted to open a bar. Ingredients are scrolling indefinitely. Patterns are dynamically generated, following pre-defined layout rules."
+          }
         },
         {
+          "caption": "Unwrapping.",
           "media": {
             "src": "/static/media/simply_chocolate-01-compressed.mp4",
             "type": "video"
-          },
-          "title": "Unwrapping."
+          }
         },
         {
+          "caption": "Product page. Bar cracks and reveals its inside composition.",
           "media": {
             "src": "/static/media/simply_chocolate-05-compressed.mp4",
             "type": "video"
-          },
-          "title": "Product page. Bar cracks and reveals its inside composition."
+          }
         },
         {
+          "caption": "Next page transition.",
           "media": {
             "src": "/static/media/simply_chocolate-02-compressed.mp4",
             "type": "video"
-          },
-          "title": "Next page transition. "
+          }
         }
       ],
-      "role": [
-        "Interactive development lead\nat Spring/Summer"
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1504224000000
+        },
+        {
+          "title": "Link",
+          "type": "links",
+          "value": [
+            {
+              "title": "See it live",
+              "url": "https://simplychocolate.dk/"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": "Development lead"
+        },
+        {
+          "title": "Agency",
+          "type": "links",
+          "value": [
+            {
+              "title": "Spring/Summer",
+              "url": "http://springsummer.dk/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "GLSL, Pixi.js, PostCSS, React, Redux"
+        },
+        {
+          "title": "Awards",
+          "type": "links",
+          "value": [
+            {
+              "title": "SOTD – Awwwards",
+              "url": "https://www.awwwards.com/sites/simply-chocolate"
+            },
+            {
+              "title": "SOTY – Awwwards",
+              "url": "https://www.awwwards.com/annual-awards-2017/"
+            },
+            {
+              "title": "SOTD – FWA",
+              "url": "https://thefwa.com/cases/simply-chocolate"
+            },
+            {
+              "title": "SOTD – CSS Design Awards",
+              "url": "https://www.cssdesignawards.com/sites/simply-chocolate/31506/"
+            },
+            {
+              "title": "SOTY – CSS Design Awards",
+              "url": "https://www.cssdesignawards.com/woty2017/sites/simply-chocolate"
+            },
+            {
+              "title": "3 Gold Circles – Creative Circle",
+              "url": "http://creativecircle.dk/arbejder/unwrapping-simply-chocolate-kopi-2/"
+            }
+          ]
+        }
       ],
-      "status": [
-        "[Live](https://simplychocolate.dk/)",
-        "[Awwwards](https://www.awwwards.com/sites/simply-chocolate)"
+      "paragraphs": [
+        "Simply Chocolate is based in Copenhagen. Up there it’s too cold to grow cocoa beans. But it´s hot enough to have a love affair with great chocolate.",
+        "Simply Chocolate is a refreshing experience and e-commerce site which features bars for chocolate lovers. It’s been designed with taste around one major key interaction: the unwrapping. Take off the wrapping and dive into delicious ingredients. But watch out for the calories!"
       ],
-      "title": "Simply Chocolate"
+      "title": "Simply Chocolate",
+      "type": "project"
     },
     {
-      "content": {
-        "paragraphs": [
-          "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
-        ]
-      },
-      "date": 1485907200000,
       "gallery": [
         {
+          "caption": "Carousel navigation. Hover to preview a story. Opening.",
           "media": {
             "src": "/static/media/beoplay_h4-01-compressed.mp4",
             "type": "video"
-          },
-          "title": "Carousel navigation. Hover to preview a story. Opening."
+          }
         },
         {
+          "caption": "Next story transition. Attention to details.",
           "media": {
             "src": "/static/media/beoplay_h4-02-compressed.mp4",
             "type": "video"
-          },
-          "title": "Next story transition. Attention to details."
+          }
         }
       ],
-      "role": [
-        "Interactive development lead\nat Spring/Summer"
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1485907200000
+        },
+        {
+          "title": "Link",
+          "type": "links",
+          "value": [
+            {
+              "title": "See it live",
+              "url": "https://www.beoplay.com/landingpages/beoplayh4"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": "Development lead"
+        },
+        {
+          "title": "Agency",
+          "type": "links",
+          "value": [
+            {
+              "title": "Spring/Summer",
+              "url": "http://springsummer.dk/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "Pixi.js, Vanilla Javascript"
+        },
+        {
+          "title": "Awards",
+          "type": "links",
+          "value": [
+            {
+              "title": "SOTD – Awwwards",
+              "url": "https://www.awwwards.com/sites/beoplay-h4-unfiltered"
+            },
+            {
+              "title": "SOTD – FWA",
+              "url": "https://thefwa.com/cases/beoplay-h4-unfiltered"
+            }
+          ]
+        }
       ],
-      "status": [
-        "[Live](https://www.beoplay.com/landingpages/beoplayh4)",
-        "[Awwwards](https://www.awwwards.com/sites/beoplay-h4-unfiltered)",
-        "[FWA](https://thefwa.com/cases/beoplay-h4-unfiltered)"
+      "paragraphs": [
+        "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
       ],
-      "title": "Beoplay Unfiltred H4"
+      "title": "Beoplay Unfiltred H4",
+      "type": "project"
     },
     {
-      "content": {
-        "paragraphs": [
-          "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
-        ]
-      },
-      "date": 1480550400000,
       "gallery": [
         {
+          "caption": "Wave composed of white dots. Attracted by cursor and moving according to the carousel.",
           "media": {
             "type": "video",
             "src": "/static/media/beoplay_m5-02-compressed.mp4"
-          },
-          "title": "Wave composed of white dots. Attracted by cursor and moving according to the carousel."
+          }
         },
         {
+          "caption": "Sound emission. Speed and frequency depending on the volume.",
           "media": {
             "type": "video",
             "src": "/static/media/beoplay_m5-01-compressed.mp4"
-          },
-          "title": "Sound emission. Speed and frequency depending on the volume."
+          }
         }
       ],
-      "role": [
-        "Interactive development\nat Spring/Summer"
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1480550400000
+        },
+        {
+          "title": "Link",
+          "type": "links",
+          "value": [
+            {
+              "title": "See it live",
+              "url": "https://www.beoplay.com/landingpages/beoplaym5"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": "Interactive development"
+        },
+        {
+          "title": "Agency",
+          "type": "links",
+          "value": [
+            {
+              "title": "Spring/Summer",
+              "url": "http://springsummer.dk/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "Vanilla Javascript"
+        },
+        {
+          "title": "Awards",
+          "type": "links",
+          "value": [
+            {
+              "title": "SOTD – Awwwards",
+              "url": "https://www.awwwards.com/sites/beoplay-m5"
+            },
+            {
+              "title": "SOTD – FWA",
+              "url": "https://thefwa.com/cases/beoplay-m5-connecting-spaces"
+            }
+          ]
+        }
       ],
-      "status": [
-        "[Live](https://www.beoplay.com/landingpages/beoplaym5)",
-        "[Awwwards](https://www.awwwards.com/sites/beoplay-m5)",
-        "[FWA](https://thefwa.com/cases/beoplay-m5-connecting-spaces)"
+      "paragraphs": [
+        "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
       ],
-      "title": "Beoplay M5"
+      "title": "Beoplay M5",
+      "type": "project"
     },
     {
       "date": 1451606400000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "For 10 months, I got the chance to work on developing and prototyping what will be the next digital products of American Express."
+      "title": "For 10 months, I got the chance to work on developing and prototyping what will be the next digital products of [American Express](https://www.americanexpress.com/).",
+      "type": "news"
     },
     {
       "date": 1451606400000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "Got hired at Spring/Summer!"
+      "title": "Got hired at [Spring/Summer](http://springsummer.dk/)!",
+      "type": "news"
     },
     {
       "date": 1443657600000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "Moved from Paris to Copenhagen and joined the e-Types digital team for 3 months."
+      "title": "Moved from Paris to Copenhagen and joined the [e-Types](http://www.e-types.com/) digital team for 3 months.",
+      "type": "news"
     },
     {
       "date": 1433116800000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "Graduated from interactive design at Gobelins — l'école de l'image, Paris."
+      "title": "Graduated from interactive design at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris.",
+      "type": "news"
     },
     {
-      "content": {
-        "paragraphs": [
-          "Mirage is an interactive short film I directed as part of my final degree diploma at Gobelins — Paris.",
-          "Mirage pictures a world where humans are assisted by technology in making decisions. They rely on so much that they might start losing a bit of humanity. Is there a limit to transhumanism? Can technology take over your own consciousness?"
-        ]
-      },
       "date": 1433116800000,
       "gallery": [
         {
+          "caption": "Look and feel of the experience. Interaction example.",
           "media": {
             "src": "/static/media/mirage-01-compressed.mp4",
             "type": "video"
-          },
-          "title": "Look and feel of the experience. Interaction example."
+          }
         },
         {
+          "caption": "Indoor behind the scene.",
           "media": {
             "src": "/static/media/mirage-01.jpg",
             "type": "image"
-          },
-          "title": "Indoor behind the scene."
+          }
         },
         {
+          "caption": "3D render before building the installation.",
           "media": {
             "src": "/static/media/mirage-03.jpg",
             "type": "image"
-          },
-          "title": "3D render before building the installation."
+          }
         },
         {
+          "caption": "Installation is built and is being tested.",
           "media": {
             "src": "/static/media/mirage-02.jpg",
             "type": "image"
-          },
-          "title": "Installation is built and is being tested."
+          }
         }
       ],
-      "role": [
-        "Interactive development",
-        "Concept",
-        "Film direction",
-        "Product design"
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1433116800000
+        },
+        {
+          "title": "Link",
+          "type": "links",
+          "value": [
+            {
+              "title": "Trailer",
+              "url": "http://mirage.sylvainreucherand.fr/"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": [
+            "Development",
+            "Film direction",
+            "Product design",
+            "Fabricator"
+          ]
+        },
+        {
+          "title": "School",
+          "type": "links",
+          "value": [
+            {
+              "title": "Gobelins — l'école de l'image, Paris",
+              "url": "https://www.gobelins.fr/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "C++, Node.js"
+        }
       ],
-      "status": [
-        "[Trailer](http://mirage.sylvainreucherand.fr/)"
+      "paragraphs": [
+        "Mirage is an interactive short film I directed as part of my diploma project at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris.",
+        "Edouard, like his peers, is an augmented human. He sees the world through a layer of technology called IO who gives him hints and accuracy for making good decisions. He relies on it, a lot. But to what extend? Isn’t he just losing a bit of his humanity? Is there a limit to transhumanism? Can technology take over his own consciousness? Those are the questions the spectator may ask himself."
       ],
-      "title": "Mirage"
+      "title": "Mirage",
+      "type": "project"
     },
     {
       "date": 1409529600000,
-      "gallery": [],
-      "role": [],
-      "status": [],
-      "title": "Started studying at Gobelins — l'école de l'image, Paris as interactive designer and joined Publicis Nurun as apprentice interactive developer."
+      "title": "Started studying at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris as interactive designer and joined [Publicis Nurun](http://nu.run/) as apprentice interactive developer.",
+      "type": "news"
     }
   ],
   "meta": {

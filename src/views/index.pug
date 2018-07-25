@@ -35,59 +35,50 @@ html
       section#recent
         .grid
           each entry in entries
-            div.grid__row.content__meta
-              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2.grid__row__column--sm-offset-2
-                div.content--secondary= moment(entry.date).format('MMM YYYY')
-              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
-                div.content--secondary
-                  each status in entry.status
-                    div!= marked(status)
-              div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2
-                div.content--light.content--secondary
-                  each role in entry.role
-                    div!= nl2br(role)
+            if entry.type === 'news'
+              div.grid__row.content__date
+                div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2.grid__row__column--sm-offset-2
+                  div= moment(entry.date).format('MMM YYYY')
 
-            div.grid__row.content__main
-              div.grid__row__column.grid__row__column--xs-8
-                h3!= marked(entry.title)
-              
-              if entry.content && entry.content.paragraphs
-                div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-4.grid__row__column--sm-offset-2
-                  each paragraph in entry.content.paragraphs
-                    p= paragraph
-
-              if entry.content && entry.content.gallery
-                div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-4.grid__row__column--sm-offset-2
-                  div
-                    each paragraph in entry.content.paragraphs
-                      p= paragraph
-
-              if (entry.gallery.length > 1)
+              div.grid__row.content__main
                 div.grid__row__column.grid__row__column--xs-8
-                  div.grid__row(data-interactive="gallery")
-                    script.
-                      !{JSON.stringify(entry.gallery)}
+                  h2!= marked(entry.title)
 
-      section#archives
-        div.grid
-          div.grid__row
-            div.grid__row__column.grid__row__column--xs-8
-              h2 Archives
+            if entry.type === 'project'
+              div.grid__row.content__main
+                div.grid__row__column.grid__row__column--xs-8.grid__row__column.grid__row__column--sm-4.grid__row__column.grid__row__column--sm-offset-2.content__main__introduction
+                  h2!= marked(entry.title)
 
-          each entry in archives
-            div.grid__row.content__archive
-              div.grid__row__column.grid__row__column--xs-8.grid__row__column--sm-2
-                div.content--secondary= entry.title
-              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
-                div.content--secondary= moment(entry.date).format('MMM YYYY')
-              div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
-                div.content--secondary
-                  each status in entry.status
-                    div!= marked(status)
-              div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2
-                div.content--secondary
-                  each role in entry.role
-                    div!= nl2br(role)
+                  if entry.paragraphs
+                    each paragraph in entry.paragraphs
+                      p!= marked(paragraph)
+
+                if entry.metadata
+                  each metadata, index in entry.metadata
+                    div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2.content__main__metadata(class=(index % 3 === 0 ? 'grid__row__column--sm-offset-2' : false))
+                      div.content__main__metadata__title= metadata.title
+
+                      if metadata.type === 'date'
+                        div= moment(metadata.value).format('MMM YYYY')
+
+                      if metadata.type === 'links'
+                        each link in metadata.value
+                          p
+                            a(href=link.url target="_blank")= link.title
+
+                      if metadata.type === 'text'
+                        if typeof metadata.value === 'object'
+                          each value in metadata.value
+                            div= value
+
+                        if typeof metadata.value === 'string'
+                          p= metadata.value
+
+                if entry.gallery && entry.gallery.length > 1
+                  div.grid__row__column.grid__row__column--xs-8.content__main__gallery
+                    div.grid__row(data-interactive="gallery")
+                      script.
+                        !{JSON.stringify(entry.gallery)}
 
     script(src='/static/app.bundle.js')
 

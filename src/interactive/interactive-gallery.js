@@ -12,7 +12,7 @@ import Interactive from './interactive';
 import Resize from '../resize/resize';
 import Spring from '../spring/spring';
 
-const format = (index, length, title) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${title}`;
+const format = (index, length, caption) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${caption}`;
 
 class Player extends PureComponent {
 
@@ -255,14 +255,14 @@ class GalleryComponent extends PureComponent {
           {
             this.props.data
               .reduce((previous, current, index, items) => {
-                const title = format(index + 1, items.length, current.title);
+                const caption = format(index + 1, items.length, current.caption);
 
-                if (title.length > previous.length) {
-                  return title;
+                if (caption.length > previous.length) {
+                  return caption;
                 }
 
                 return previous;
-              }, format(1, this.props.data.length, this.props.data[0].title))
+              }, format(1, this.props.data.length, this.props.data[0].caption))
           }
 
           {
@@ -274,7 +274,7 @@ class GalleryComponent extends PureComponent {
                 <div
                   key={index}
                   className="gallery__caption__item"
-                  style={{opacity: opacity}}>{format(index + 1, items.length, item.title)}</div>
+                  style={{opacity: opacity}}>{format(index + 1, items.length, item.caption)}</div>
               );
             })
           }
