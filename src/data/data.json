@@ -80,20 +80,20 @@
         }
       ],
       "paragraphs": [
-        "Stink Studios and Google partnered up to create a series of demos showcasing how to push the limits of Google Cloud technology. This was an invite-only event for some of the world’s top C-suite executives.",
-        "G-Suite is a tangible example of how Google Cloud supports collaboration and efficiency. Illustrated and animated entirely in-house, we imagined a Rube Goldberg-inspired visual story that shows how easily teams can turn a rough idea into an executive pitch. Playing out over 8 synchronised screens, guests got to kick off ideation in the beginning by choosing three topics from a Jamboard, follow the workflow from Docs to Slides to Sheets, and then tap “send” at the end to launch the idea into the world."
+        "Stink Studios partnered with Google to create a series of demos showcasing how to push the limits of Google Cloud technology. These demos were created for an exclusive event series that hosted some of the world’s top C-suite executives.",
+        "The G-Suite Demo is a tangible example of how Google Cloud supports collaboration and efficiency. Illustrated and animated entirely in-house, we imagined a Rube Goldberg-inspired visual story that shows how easily teams can turn an idea into a completed pitch. Playing out over 8 synchronised screens, guests got to kick off ideation by selecting a topic on the Jamboard, follow the workflow from Docs to Slides to Sheets, and finally tap “send” at the end to launch the idea into the world."
       ],
       "title": "Google Cloud Interactive Demo",
       "type": "project"
     },
     {
       "date": 1518217200000,
-      "title": "This has been an exciting journey for Simply Chocolate and it’s never ending! The lovely peeps from [Spring/Summer](http://springsummer.dk/) came back home from the annual Awwwards ceremony with a Site of Year for best e-commerce site. Congratulations! We’ve also been published in .net magazine February issue. I talk about some of the challenges I encountered and some of the magic I used to make these chocolate bars so yummy.",
+      "title": "This has been an exciting year for Simply Chocolate and it’s seemingly never-ending! The lovely peeps from [Spring/Summer](http://springsummer.dk/) came back from this year’s Awwwards ceremony with a Site of Year win for best e-commerce site. Congratulations! I’ve also been published in the .net magazine February issue where I talk about some of the technical hurdles I encountered and the magic I used to make these chocolate bars look so yummy.",
       "type": "news"
     },
     {
       "date": 1510268400000,
-      "title": "After two years of great times and rewarding collaborations in Copenhagen, I moved on to the next exciting chapter of my life in New York and career at [Stink Studios](https://www.stinkstudios.com/).",
+      "title": "After two years of great work and rewarding collaborations in Copenhagen, I’ve moved to New York with a new job at [Stink Studios](https://www.stinkstudios.com/)!",
       "type": "news"
     },
     {
@@ -209,8 +209,8 @@
         }
       ],
       "paragraphs": [
-        "Simply Chocolate is based in Copenhagen. Up there it’s too cold to grow cocoa beans. But it´s hot enough to have a love affair with great chocolate.",
-        "Simply Chocolate is a refreshing experience and e-commerce site which features bars for chocolate lovers. It’s been designed with taste around one major key interaction: the unwrapping. Take off the wrapping and dive into delicious ingredients. But watch out for the calories!"
+        "Simply Chocolate is a company based in Copenhagen where it’s too cold to grow cocoa beans, but hot enough to have a steamy love affair with delicious chocolate.",
+        "Simply Chocolate is a refreshing digital experience and e-commerce site which features their products and ethos. It was beautifully designed with a focus on one key interaction: unwrapping. Take off the wrapper and dive into delicious ingredients."
       ],
       "title": "Simply Chocolate",
       "type": "project"
@@ -284,7 +284,7 @@
         }
       ],
       "paragraphs": [
-        "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lifes. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
+        "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on the essentials. The site accompanying this product’s launch is a journey into the customer’s life, told without filters. It features stories of 3 different characters, offering a snapshot of their lives. In addition to anecdotes, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered could have their photo featured on the site and participate in the unfiltered journey."
       ],
       "title": "Beoplay Unfiltred H4",
       "type": "project"
@@ -358,7 +358,7 @@
         }
       ],
       "paragraphs": [
-        "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music across multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
+        "Beoplay M5 is a powerful, wireless speaker that can play music in multiple rooms when paired with other speakers. Inspired by the speaker controls, we built an interactive site that introduced white dots that represented sound as it moves through the air and connects spaces."
       ],
       "title": "Beoplay M5",
       "type": "project"
@@ -375,7 +375,7 @@
     },
     {
       "date": 1444428000000,
-      "title": "Moved from Paris to Copenhagen and joined the [e-Types](http://www.e-types.com/) digital team for 3 months.",
+      "title": "Moved to Copenhagen and joined the [e-Types](http://www.e-types.com/) digital team for 3 months.",
       "type": "news"
     },
     {
@@ -458,7 +458,7 @@
       ],
       "paragraphs": [
         "Mirage is an interactive short film I directed as part of my diploma project at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris.",
-        "Edouard, like his peers, is an augmented human. He sees the world through a layer of technology called IO who gives him hints and accuracy for making good decisions. He relies on it, a lot. But to what extend? Isn’t he just losing a bit of his humanity? Is there a limit to transhumanism? Can technology take over his own consciousness? Those are the questions the spectator may ask himself."
+        "Edouard, like his peers, is an augmented human. He sees the world through a layer of technology called IO who gives him hints for making good decisions. He relies on it, a lot. But to what extent? Isn’t he just losing a bit of his humanity? Is there a limit to trans-humanism? Can technology take over his own consciousness? Those are the questions the viewer may ask as they navigate through the experience."
       ],
       "title": "Mirage",
       "type": "project"
@@ -527,8 +527,8 @@
         }
       ],
       "paragraphs": [
-        "Reuters Wider is a news reader. It promotes the content and the actions carried by the Thomson Reuters Foundation on its website [trust.org](http://www.trust.org/).",
-        "Mainstream newspapers are failing on to making mobile solutions for the digital natives. Likely, Wider curates, crosses information, digs in and checks sources, compare medias opinions. It does the job people just don't have time to do. It delivers a new issue every week with an adapted editorial content, entertaining and interactive, it invites you to appropriate the subject."
+        "Reuters Wider is a news reader that promotes the content and actions carried by the Thomson Reuters Foundation on its website [trust.org](http://www.trust.org/).",
+        "Wider targets digital natives in landscape where mainstream newspapers have lacked. Additionally, Wider curates, verifies information, confirms sources, and compares media opinions. It does the job people just don't have time to do, and delivers a new issue every week with adapted editorial content. Entertaining and interactive, it invites you to appropriate the subject."
       ],
       "title": "Reuters Wider",
       "type": "project"
