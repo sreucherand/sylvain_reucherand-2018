@@ -23,14 +23,14 @@ html
         link(rel='shortcut icon' href='/static/media/favicon.ico')
 
     body
-      navigation
+      navigation#title
         div.grid
           div.grid__row
             div.grid__row__column.grid__row__column--xs-8
-              h1
-                | Sylvain Reucherand
-                br
-                | Developer
+              h1 Sylvain Reucherand
+              div Developer
+              div
+                a(href="mailto:hello@sylvainreucherand.fr") Say hi!
 
       section#recent
         .grid
@@ -79,11 +79,6 @@ html
                     div.grid__row(data-interactive="gallery")
                       script.
                         !{JSON.stringify(entry.gallery)}
-
-      section#contact
-        .grid
-          div.grid__row__column.grid__row__column--xs-8
-            a(href="mailto:hello@sylvainreucherand.fr") Say hi!
 
     script(src='/static/app.bundle.js')
 

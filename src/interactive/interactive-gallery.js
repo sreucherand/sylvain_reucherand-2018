@@ -70,6 +70,7 @@ class GalleryComponent extends PureComponent {
 
     this.state = {
       cache: [],
+      grabbing: false,
       index: 0,
       progress: 0,
       width: 0,
@@ -100,6 +101,9 @@ class GalleryComponent extends PureComponent {
     this.gestureManager.on('panmove', this.handlePan.bind(this));
     this.gestureManager.on('panstart', this.handleStart.bind(this));
     this.gestureManager.on('panend pancancel', this.handleRelease.bind(this));
+
+    this.gestureManager.on('press', this.handlePress.bind(this));
+    this.gestureManager.on('pressup', this.handlePressUp.bind(this));
 
     for (let item of this.props.data) {
       if (item.media.type === 'image') {
@@ -140,6 +144,14 @@ class GalleryComponent extends PureComponent {
     this.spring.setAtRest();
   }
 
+  handlePress () {
+    this.setState({grabbing: true});
+  }
+
+  handlePressUp () {
+    this.setState({grabbing: false});
+  }
+
   handleRef (node) {
     if (this.element === undefined && node) {
       this.element = node;
@@ -162,6 +174,8 @@ class GalleryComponent extends PureComponent {
 
     this.spring.to(this.currentIndex);
     this.spring.velocity = velocity * 30;
+
+    this.setState({grabbing: false});
   }
 
   handleSpringUpdate (value) {
@@ -212,7 +226,7 @@ class GalleryComponent extends PureComponent {
               className="grid__row__column grid__row__column--xs-8 grid__row__column--sm-4"
               ref={measureRef}>
               <div
-                className="gallery__inner"
+                className={classnames('gallery__inner', {'gallery__inner--grabbing': this.state.grabbing})}
                 ref={this.handleRef}>
                 {
                   this.props.data.map((item, index) => (

@@ -23,25 +23,13 @@ a {
 }
 
 h1 {
-  secondary();
+  font-size: inherit;
+  font-weight: inherit;
   margin: 0;
 }
 h2,
 h3 {
   large_title();
-}
-
-navigation {
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: 10;
-  
-  for breakpoint, value in --outer-margins {
-    +mq(breakpoint) {
-      top: unit(value, 'px');
-    }
-  }
 }
 
 .content {  
@@ -99,18 +87,6 @@ navigation {
     margin-bottom: 0.9em;
   }
 }
-
-#contact {
-  secondary();
-  
-  for breakpoint, value in --outer-margins {
-    +mq(breakpoint) {
-      margin-bottom: unit(value, 'px');
-    }
-  }
-}
-
-#recent { padding-top: 21.76em; }
 
 .gallery {
   &__caption {
@@ -186,9 +162,16 @@ navigation {
   }
   
   &__inner {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+
+    &--grabbing {
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
   }
   
   &__item {
@@ -222,4 +205,19 @@ navigation {
     }
   }
 }
-  
+
+#recent { padding-top: 21.76em; }
+
+#title {
+  secondary();
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+
+  for breakpoint, value in --outer-margins {
+    +mq(breakpoint) {
+      top: unit(value, 'px');
+    }
+  }
+}
