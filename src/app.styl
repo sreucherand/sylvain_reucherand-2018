@@ -24,6 +24,7 @@ a {
 
 h1 {
   secondary();
+  margin: 0;
 }
 h2,
 h3 {
@@ -62,7 +63,7 @@ navigation {
     }
 
     &__metadata {
-      caption();
+      secondary();
 
       a {
         text-decoration: none;
@@ -73,12 +74,10 @@ navigation {
           background-repeat: no-repeat;
           background-size: 100% auto;
           content: '';
-          display: inline-block;
-          height: 0.5em;
-          margin-left: 0.5em;
+          margin-left: 0.3em;
+          padding-right: 0.5em;
           position: relative;
-          top: -0.25em;
-          width: 0.5em;
+          top: -0.1em;
         }
       }
 
@@ -101,11 +100,21 @@ navigation {
   }
 }
 
+#contact {
+  secondary();
+  
+  for breakpoint, value in --outer-margins {
+    +mq(breakpoint) {
+      margin-bottom: unit(value, 'px');
+    }
+  }
+}
+
 #recent { padding-top: 21.76em; }
 
 .gallery {
   &__caption {
-    caption();
+    secondary();
     color: transparent;
     position: relative;
     margin-top: 12px;

@@ -1,7 +1,6 @@
 {
   "entries": [
     {
-      "title": "Google Cloud Interactive Demo",
       "gallery": [
         {
           "caption": "Installation contemplation.",
@@ -84,6 +83,7 @@
         "Stink Studios and Google partnered up to create a series of demos showcasing how to push the limits of Google Cloud technology. This was an invite-only event for some of the world’s top C-suite executives.",
         "G-Suite is a tangible example of how Google Cloud supports collaboration and efficiency. Illustrated and animated entirely in-house, we imagined a Rube Goldberg-inspired visual story that shows how easily teams can turn a rough idea into an executive pitch. Playing out over 8 synchronised screens, guests got to kick off ideation in the beginning by choosing three topics from a Jamboard, follow the workflow from Docs to Slides to Sheets, and then tap “send” at the end to launch the idea into the world."
       ],
+      "title": "Google Cloud Interactive Demo",
       "type": "project"
     },
     {
@@ -131,6 +131,13 @@
           "media": {
             "src": "/static/media/simply_chocolate-02-compressed.mp4",
             "type": "video"
+          }
+        },
+        {
+          "caption": "Publication in .net magazine.",
+          "media": {
+            "src": "/static/media/simply_chocolate-06.jpg",
+            "type": "image"
           }
         }
       ],
@@ -277,7 +284,7 @@
         }
       ],
       "paragraphs": [
-        "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lives. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
+        "Beoplay introduces Beoplay H4: wireless, over-ear headphones with a focus on pure essentials. The site is a journey into the customers life, told without filters. It features 3 short stories of 3 different characters, offering a snapshot of their lifes. In addition to that, customers who share a photo of their headphones on Instagram with the hashtag #unfiltered will have their photo featured on the site and participate the unfiltered journey."
       ],
       "title": "Beoplay Unfiltred H4",
       "type": "project"
@@ -285,7 +292,7 @@
     {
       "gallery": [
         {
-          "caption": "Wave composed of white dots. Attracted by cursor and moving according to the carousel.",
+          "caption": "Wave composed of white dots. Attracted by cursor and following the carousel.",
           "media": {
             "type": "video",
             "src": "/static/media/beoplay_m5-02-compressed.mp4"
@@ -351,7 +358,7 @@
         }
       ],
       "paragraphs": [
-        "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music accros multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
+        "Beoplay introduces Beoplay M5, a powerful, wireless and connected speaker. It can play music across multiple rooms when paired with other speakers. It connects spaces. Inspired by the speaker controls, we introduced white dots as key elements to represent the sound when it moves through the air and different spaces. I worked on making these dots move along the experience whether you interact with them, or just look at them..."
       ],
       "title": "Beoplay M5",
       "type": "project"
@@ -377,7 +384,6 @@
       "type": "news"
     },
     {
-      "date": 1433116800000,
       "gallery": [
         {
           "caption": "Look and feel of the experience. Interaction example.",
@@ -458,20 +464,90 @@
       "type": "project"
     },
     {
+      "gallery": [
+        {
+          "caption": "Interactions.",
+          "media": {
+            "src": "/static/media/reuters_wider-01-compressed.mp4",
+            "type": "video"
+          }
+        },
+        {
+          "caption": "Covers.",
+          "media": {
+            "src": "/static/media/reuters_wider-02.jpg",
+            "type": "image"
+          }
+        },
+        {
+          "caption": "Extra features.",
+          "media": {
+            "src": "/static/media/reuters_wider-03.jpg",
+            "type": "image"
+          }
+        }
+      ],
+      "metadata": [
+        {
+          "title": "Date",
+          "type": "date",
+          "value": 1420066800000
+        },
+        {
+          "title": "Link",
+          "type": "links",
+          "value": [
+            {
+              "title": "Github",
+              "url": "https://github.com/sreucherand/reuters-wider"
+            }
+          ]
+        },
+        {
+          "title": "Role",
+          "type": "text",
+          "value": [
+            "Mobile development"
+          ]
+        },
+        {
+          "title": "School",
+          "type": "links",
+          "value": [
+            {
+              "title": "Gobelins — l'école de l'image, Paris",
+              "url": "https://www.gobelins.fr/"
+            }
+          ]
+        },
+        {
+          "title": "Tech",
+          "type": "text",
+          "value": "Objective-C"
+        }
+      ],
+      "paragraphs": [
+        "Reuters Wider is a news reader. It promotes the content and the actions carried by the Thomson Reuters Foundation on its website [trust.org](http://www.trust.org/).",
+        "Mainstream newspapers are failing on to making mobile solutions for the digital natives. Likely, Wider curates, crosses information, digs in and checks sources, compare medias opinions. It does the job people just don't have time to do. It delivers a new issue every week with an adapted editorial content, entertaining and interactive, it invites you to appropriate the subject."
+      ],
+      "title": "Reuters Wider",
+      "type": "project"
+    },
+    {
       "date": 1409529600000,
       "title": "Started studying at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris as interactive designer and joined [Publicis Nurun](http://nu.run/) as apprentice interactive developer.",
       "type": "news"
     }
   ],
   "meta": {
-    "description": "Hello, I'm Sylvain Reucherand, a 24 years old interactive developer based in Copenhagen – Denmark.",
+    "description": "Hello, I'm Sylvain Reucherand, a developer based in Brooklyn – USA.",
     "image": {
       "fb": "/static/media/fb.jpg",
       "twitter": "/static/media/twitter.jpg"
     },
     "keywords": "sylvain, reucherand, interactive, developer, front",
-    "title": "Sylvain Reucherand — Interactive developer",
+    "title": "Sylvain Reucherand — Developer",
     "twitter": "@sreucherand",
-    "url": "http://sylvainreucherand.fr/"
+    "url": "https://sylvainreucherand.fr/"
   }
 }
