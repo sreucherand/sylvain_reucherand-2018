@@ -38,7 +38,7 @@ html
             if entry.type === 'news'
               div.grid__row.content__date
                 div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2.grid__row__column--sm-offset-2
-                  div= moment(entry.date).format('MMM YYYY')
+                  div= moment.utc(entry.date).format('MMM YYYY')
 
               div.grid__row.content__main
                 div.grid__row__column.grid__row__column--xs-8
@@ -59,7 +59,7 @@ html
                       div.content__main__metadata__title= metadata.title
 
                       if metadata.type === 'date'
-                        div= moment(metadata.value).format('MMM YYYY')
+                        div= moment.utc(metadata.value).format('MMM YYYY')
 
                       if metadata.type === 'links'
                         each link in metadata.value

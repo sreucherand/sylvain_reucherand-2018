@@ -28,7 +28,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1504224000000
+          "value": 1515538800000
         },
         {
           "title": "Links",
@@ -87,12 +87,12 @@
       "type": "project"
     },
     {
-      "date": 1504224000000,
+      "date": 1518217200000,
       "title": "This has been an exciting journey for Simply Chocolate and it’s never ending! The lovely peeps from [Spring/Summer](http://springsummer.dk/) came back home from the annual Awwwards ceremony with a Site of Year for best e-commerce site. Congratulations! We’ve also been published in .net magazine February issue. I talk about some of the challenges I encountered and some of the magic I used to make these chocolate bars so yummy.",
       "type": "news"
     },
     {
-      "date": 1504224000000,
+      "date": 1510268400000,
       "title": "After two years of great times and rewarding collaborations in Copenhagen, I moved on to the next exciting chapter of my life in New York and career at [Stink Studios](https://www.stinkstudios.com/).",
       "type": "news"
     },
@@ -145,7 +145,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1504224000000
+          "value": 1504994400000
         },
         {
           "title": "Link",
@@ -236,7 +236,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1485907200000
+          "value": 1486681200000
         },
         {
           "title": "Link",
@@ -310,7 +310,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1480550400000
+          "value": 1481324400000
         },
         {
           "title": "Link",
@@ -364,22 +364,22 @@
       "type": "project"
     },
     {
-      "date": 1451606400000,
+      "date": 1476050400000,
       "title": "For 10 months, I got the chance to work on developing and prototyping what will be the next digital products of [American Express](https://www.americanexpress.com/).",
       "type": "news"
     },
     {
-      "date": 1451606400000,
+      "date": 1452380400000,
       "title": "Got hired at [Spring/Summer](http://springsummer.dk/)!",
       "type": "news"
     },
     {
-      "date": 1443657600000,
+      "date": 1444428000000,
       "title": "Moved from Paris to Copenhagen and joined the [e-Types](http://www.e-types.com/) digital team for 3 months.",
       "type": "news"
     },
     {
-      "date": 1433116800000,
+      "date": 1433887200000,
       "title": "Graduated from interactive design at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris.",
       "type": "news"
     },
@@ -418,7 +418,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1433116800000
+          "value": 1433887200000
         },
         {
           "title": "Link",
@@ -491,7 +491,7 @@
         {
           "title": "Date",
           "type": "date",
-          "value": 1420066800000
+          "value": 1420844400000
         },
         {
           "title": "Link",
@@ -534,7 +534,7 @@
       "type": "project"
     },
     {
-      "date": 1409529600000,
+      "date": 1410300000000,
       "title": "Started studying at [Gobelins — l'école de l'image](https://www.gobelins.fr/), Paris as interactive designer and joined [Publicis Nurun](http://nu.run/) as apprentice interactive developer.",
       "type": "news"
     }
