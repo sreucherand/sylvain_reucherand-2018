@@ -1,6 +1,6 @@
 {
   "name": "sylvain-reucherand-landing-page",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "server.js",
   "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
   "license": "MIT",
@@ -36,16 +36,17 @@
   "scripts": {
     "browser": "browser-sync start --files './static/*' --files './src/views/*' --no-ghost-mode --no-open --no-notify -p localhost:3401 --port 3402",
     "build": "npm run build:css && npm run build:js && npm run build:views",
-    "build:css": "stylus ./src/app.styl --include node_modules/ --include-css --print | cssnano > ./static/app.bundle.css",
-    "build:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./static' --output-filename='[name].bundle.js' -p --progress",
-    "build:views": "pug ./src/views/index.pug --obj ./src/data/expose.js --out ./static/",
+    "build:css": "stylus ./src/app.styl --include node_modules/ --include-css --print | cssnano > ./public/static/app.bundle.css",
+    "build:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./public/static' --output-filename='[name].bundle.js' -p --progress",
+    "build:views": "pug ./src/views/index.pug --obj ./src/data/expose.js --out ./public/",
     "eslint": "eslint src/**/*.js; exit 0",
-    "prebuild": "rm -f static/*.{css,js,html}",
-    "prestart": "rm -f static/*.{css,js,html}",
+    "prebuild": "rm -rf public/ && mkdir -p public/static",
+    "prestart": "rm -rf public/ && mkdir -p public/static",
     "server": "nodemon --watch ./server.js --watch ./src/data server.js",
     "start": "npm run browser | npm run server | npm run watch:css | npm run watch:js",
-    "watch:css": "stylus ./src/app.styl --include node_modules/ --include-css --out ./static/app.bundle.css --use autoprefixer-stylus --watch",
-    "watch:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./static' --output-filename='[name].bundle.js' --watch"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "watch:css": "stylus ./src/app.styl --include node_modules/ --include-css --out ./public/static/app.bundle.css --use autoprefixer-stylus --watch",
+    "watch:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./public/static' --output-filename='[name].bundle.js' --watch"
   },
   "dependencies": {
     "express": "^4.15.4",
