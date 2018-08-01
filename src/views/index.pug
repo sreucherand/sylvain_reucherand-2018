@@ -2,22 +2,21 @@ doctype html
 html
     head
         meta(charset='utf-8')
-        title= meta.title
-        meta(name='description' content=meta.description)
-        meta(name='keywords' content=meta.keywords)
+        title= feed.data.title1[0].text
+        meta(name='description' content=feed.data.description[0].text)
         meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
-        meta(property='og:title' content=meta.title)
-        meta(property='og:image' content=url.resolve(meta.url, meta.image.fb))
-        meta(property='og:url' content=meta.url)
-        meta(property='og:site-name' content=meta.title)
+        meta(property='og:title' content=feed.data.title1[0].text)
+        meta(property='og:image' content=feed.data.image.Facebook.url)
+        meta(property='og:url' content=feed.data.url.url)
+        meta(property='og:site-name' content=feed.data.title1[0].text)
 
         meta(name='twitter:card' content='summary_large_image')
-        meta(name='twitter:site' content=meta.twitter)
-        meta(name='twitter:creator' content=meta.twitter)
-        meta(name='twitter:title' content=meta.title)
-        meta(name='twitter:description' content=meta.description)
-        meta(name='twitter:image:src' content=url.resolve(meta.url, meta.image.twitter))
+        meta(name='twitter:site' content=feed.data.twitter)
+        meta(name='twitter:creator' content=feed.data.twitter)
+        meta(name='twitter:title' content=feed.data.title1[0].text)
+        meta(name='twitter:description' content=feed.data.description[0].text)
+        meta(name='twitter:image:src' content=feed.data.image.Twitter.url)
 
         link(rel='stylesheet' href='/static/app.bundle.css')
         link(rel='shortcut icon' href='/static/media/favicon.ico')
@@ -34,47 +33,41 @@ html
 
       section#recent
         .grid
-          each entry in entries
-            if entry.type === 'news'
+          each post in resolveLinks(feed.data.posts, posts, 'post')
+            if post.type === 'news'
               div.grid__row.content__date
                 div.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2.grid__row__column--sm-offset-2
-                  div= moment.utc(entry.date).format('MMM YYYY')
+                  div= post.data.date
 
               div.grid__row.content__main
                 div.grid__row__column.grid__row__column--xs-8
-                  h2!= marked(entry.title)
+                  h2!= richText(post.data.title)
 
-            if entry.type === 'project'
+            if post.type === 'project'
               div.grid__row.content__main
                 div.grid__row__column.grid__row__column--xs-8.grid__row__column.grid__row__column--sm-4.grid__row__column.grid__row__column--sm-offset-2.content__main__introduction
-                  h2!= marked(entry.title)
+                  h2!= richText(post.data.title)
 
-                  if entry.paragraphs
-                    each paragraph in entry.paragraphs
-                      p!= marked(paragraph)
+                  each paragraph in post.data.description
+                    p!= richText(paragraph)
 
-                if entry.metadata
-                  each metadata, index in entry.metadata
-                    div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2.content__main__metadata(class=(index % 3 === 0 ? 'grid__row__column--sm-offset-2' : false))
-                      div.content__main__metadata__title= metadata.title
+                each slice, index in post.data.body
+                  div.grid__row__column.grid__row__column--xs-4.grid__row__column--sm-2.content__main__metadata(class=(index % 3 === 0 ? 'grid__row__column--sm-offset-2' : false))
+                    div.content__main__metadata__title= slice.primary.title1[0].text
 
-                      if metadata.type === 'date'
-                        div= moment.utc(metadata.value).format('MMM YYYY')
+                    if slice.slice_type === 'date'
+                      div= slice.primary.date
 
-                      if metadata.type === 'links'
-                        each link in metadata.value
-                          p
-                            a(href=link.url target="_blank")= link.title
+                    if slice.slice_type === 'links'
+                      each item in slice.items
+                        p
+                          a(href=item.link.url target=item.link.target rel=(item.link.target === '_blank' ? "noopener" : false))= item.title1[0].text
 
-                      if metadata.type === 'text'
-                        if typeof metadata.value === 'object'
-                          each value in metadata.value
-                            div= value
+                    if slice.slice_type === 'text'
+                      each item in slice.items
+                        p= item.text[0].text
 
-                        if typeof metadata.value === 'string'
-                          p= metadata.value
-
-                if entry.gallery && entry.gallery.length > 1
+                if false
                   div.grid__row__column.grid__row__column--xs-8.content__main__gallery
                     div.grid__row(data-interactive="gallery")
                       script.

@@ -3,16 +3,20 @@ import clamp from 'lodash/clamp';
 import classnames from 'classnames';
 import Hammer from 'hammerjs';
 import includes from 'lodash/includes';
+import mime from 'mime-types';
 import numeral from 'numeral';
 import React, {PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import rebound from 'rebound';
 
-import Interactive from './interactive';
+import {caption} from '../typography/caption.css';
+import grid from '../grid/grid.css';
+import html from '../html/format';
 import Resize from '../resize/resize';
 import Spring from '../spring/spring';
+import styles from './gallery.css';
 
-const format = (index, length, caption) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${caption}`;
+const format = (index, length, caption) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${html(caption)}`;
 
 class Player extends PureComponent {
 
@@ -61,7 +65,7 @@ class Player extends PureComponent {
 
 }
 
-class GalleryComponent extends PureComponent {
+export default class Gallery extends PureComponent {
 
   constructor (props) {
     super(props);
@@ -106,10 +110,10 @@ class GalleryComponent extends PureComponent {
     this.gestureManager.on('pressup', this.handlePressUp.bind(this));
 
     for (let item of this.props.data) {
-      if (item.media.type === 'image') {
+      if (item.media.kind === 'image') {
         const image = new Image();
-        image.onload = () => this.setState(state => ({cache: [...state.cache, item.media.src]}));
-        image.src = item.media.src;
+        image.onload = () => this.setState(state => ({cache: [...state.cache, item.media.url]}));
+        image.src = item.media.url;
       }
     }
   }
@@ -135,11 +139,11 @@ class GalleryComponent extends PureComponent {
     let progress = this.velocity / -this.state.width;
 
     const value = this.spring.value;
-    
+
     if ((value + progress) < 0 || (value + progress) > this.props.data.length - 1) {
       progress *= 0.5;
     }
-    
+
     this.spring.value = value + progress;
     this.spring.setAtRest();
   }
@@ -193,10 +197,10 @@ class GalleryComponent extends PureComponent {
     return [
       <div
         key="controls"
-        className="grid__row__column grid__row__column--xs-8 grid__row__column--sm-1 grid__row__column--sm-offset-1">
-        <div className="gallery__controls">
+        className={classnames(grid.column, grid.column__xs8, grid.column__sm1, grid.column__smOffset1)}>
+        <div className={styles.gallery__controls}>
           <div
-            className={classnames("gallery__controls__control", {"gallery__controls__control--disabled": this.state.index <= 0})}
+            className={classnames(styles.gallery__controls__control, {[styles['gallery__controls__control--disabled']]: this.state.index <= 0})}
             onClick={this.handleControlLeftClick}>
             <svg viewBox="0 0 7.8 14.2">
               <polyline
@@ -206,7 +210,7 @@ class GalleryComponent extends PureComponent {
           </div>
 
           <div
-            className={classnames("gallery__controls__control", {"gallery__controls__control--disabled": this.state.index >= this.props.data.length - 1})}
+            className={classnames(styles.gallery__controls__control, {[styles['gallery__controls__control--disabled']]: this.state.index >= this.props.data.length - 1})}
             onClick={this.handleControlRightClick}>
             <svg viewBox="0 0 7.8 14.2">
               <polyline
@@ -223,25 +227,25 @@ class GalleryComponent extends PureComponent {
         {
           ({measureRef}) => (
             <div
-              className="grid__row__column grid__row__column--xs-8 grid__row__column--sm-4"
+              className={classnames(grid.column, grid.column__xs8, grid.column__sm4)}
               ref={measureRef}>
               <div
-                className={classnames('gallery__inner', {'gallery__inner--grabbing': this.state.grabbing})}
+                className={classnames(styles.gallery__inner, {[styles['gallery__inner--grabbing']]: this.state.grabbing})}
                 ref={this.handleRef}>
                 {
                   this.props.data.map((item, index) => (
                     <div
                       key={index}
-                      className="gallery__item"
+                      className={styles.gallery__item}
                       style={{transform: transform, WebkitTransform: transform}}>
                       {
-                        item.media.type === 'image' && (
-                          <div style={{backgroundImage: `url('${item.media.src}')`, opacity: includes(this.state.cache, item.media.src) ? 1 : 0}} />
+                        /^image/.test(mime.lookup(item.media.url)) && (
+                          <div style={{backgroundImage: `url('${item.media.url}')`, opacity: includes(this.state.cache, item.media.url) ? 1 : 0}} />
                         )
                       }
 
                       {
-                        item.media.type === 'video' && (
+                        /^video/.test(mime.lookup(item.media.url)) && (
                           <div>
                             <Player
                               loop
@@ -249,13 +253,13 @@ class GalleryComponent extends PureComponent {
                               playsInline
                               play={index === this.state.index}
                               preload="auto"
-                              src={item.media.src} />
+                              src={item.media.url} />
                           </div>
                         )
                       }
                     </div>
                   ))
-                } 
+                }
               </div>
             </div>
           )
@@ -264,8 +268,8 @@ class GalleryComponent extends PureComponent {
 
       <div
         key="caption"
-        className="grid__row__column grid__row__column--xs-8 grid__row__column--sm-4 grid__row__column--sm-offset-2">
-        <div className="gallery__caption">
+        className={classnames(grid.column, grid.column__xs8, grid.column__sm4, grid.column__smOffset2, caption)}>
+        <div className={styles.gallery__caption}>
           {
             this.props.data
               .reduce((previous, current, index, items) => {
@@ -287,7 +291,7 @@ class GalleryComponent extends PureComponent {
               return (
                 <div
                   key={index}
-                  className="gallery__caption__item"
+                  className={styles.gallery__caption__item}
                   style={{opacity: opacity}}>{format(index + 1, items.length, item.caption)}</div>
               );
             })
@@ -305,22 +309,6 @@ class GalleryComponent extends PureComponent {
     this._currentIndex = clamp(index, 0, this.props.data.length - 1);
 
     this.setState({index: this._currentIndex});
-  }
-
-}
-
-export default class InteractiveGallery extends Interactive {
-
-  constructor (element) {
-    super(element);
-
-    const script = this.element.querySelector('script');
-
-    this.data = JSON.parse(script.innerHTML);
-
-    this.element.removeChild(script);
-
-    ReactDOM.render(<GalleryComponent data={this.data} />, this.element);
   }
 
 }
