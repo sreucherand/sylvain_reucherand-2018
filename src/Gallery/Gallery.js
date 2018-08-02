@@ -209,7 +209,7 @@ export default class Gallery extends PureComponent {
         key="controls"
         className={classnames(
           grid.column,
-          grid.column__xs8,
+          grid.column__default8,
           grid.column__sm1,
           grid.column__smOffset1
         )}
@@ -245,7 +245,7 @@ export default class Gallery extends PureComponent {
           <div
             className={classnames(
               grid.column,
-              grid.column__xs8,
+              grid.column__default8,
               grid.column__sm4
             )}
             ref={measureRef}
@@ -296,7 +296,7 @@ export default class Gallery extends PureComponent {
         key="caption"
         className={classnames(
           grid.column,
-          grid.column__xs8,
+          grid.column__default8,
           grid.column__sm4,
           grid.column__smOffset2,
           caption
