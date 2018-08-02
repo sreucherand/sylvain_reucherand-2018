@@ -1,8 +1,8 @@
-import {node, string} from 'prop-types';
+import { node, string } from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-const Html = ({children, css, js, name}) => {
+const Html = ({ children, css, js, name }) => {
   const helmet = Helmet.renderStatic();
 
   return (
@@ -18,25 +18,27 @@ const Html = ({children, css, js, name}) => {
         {helmet.title.toComponent()}
         {helmet.meta.toComponent()}
 
-        <link
-          media="screen"
-          href={css}
-          rel="stylesheet"
-          type="text/css"
-        />
+        <link media="screen" href={css} rel="stylesheet" type="text/css" />
       </head>
 
       <body>
         {children}
 
         <script defer src={js} />
-        <script async src='https://www.googletagmanager.com/gtag/js?id=UA-37300118-4' />
-        <script dangerouslySetInnerHTML={{__html: `
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-37300118-4"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'UA-37300118-4');
-        `}} />
+        `,
+          }}
+        />
       </body>
     </html>
   );

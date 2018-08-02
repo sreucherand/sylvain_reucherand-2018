@@ -51,7 +51,7 @@ module.exports.pitch = function(request) {
   compiler.plugin('compilation', function(compilation) {
     if (compilation.cache) {
       if (!compilation.cache[cache]) {
-        compilation.cache[cache] = {}
+        compilation.cache[cache] = {};
       }
 
       compilation.cache = compilation.cache[cache];
@@ -59,7 +59,9 @@ module.exports.pitch = function(request) {
   });
 
   compiler.plugin('after-compile', function(compilation, callback) {
-    source = compilation.assets[childFilename] && compilation.assets[childFilename].source();
+    source =
+      compilation.assets[childFilename] &&
+      compilation.assets[childFilename].source();
 
     compilation.chunks.forEach(function(chunk) {
       chunk.files.forEach(function(file) {
@@ -99,7 +101,7 @@ module.exports.pitch = function(request) {
       }
 
       callback(null, exports.default);
-    } catch(e) {
+    } catch (e) {
       callback(e);
     }
   });

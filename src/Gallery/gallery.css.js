@@ -78,16 +78,18 @@ export default `
         width: 50vw;
         z-index: -1;
 
-        ${keys(omit(grid.gutters, 'default')).map((key) => {
-          const breakpoint = breakpoints[key];
-          const gutter = grid.gutters[key];
+        ${keys(omit(grid.gutters, 'default'))
+          .map(key => {
+            const breakpoint = breakpoints[key];
+            const gutter = grid.gutters[key];
 
-          return `
+            return `
             @media screen and (min-width: ${breakpoint}px) {
               right: ${-gutter}px;
             }
           `;
-        }).join('')}
+          })
+          .join('')}
       }
     }
   }
@@ -111,16 +113,18 @@ export default `
     flex-shrink: 0;
     margin-right: ${grid.gutters.default}px;
 
-    ${keys(omit(grid.gutters, 'default')).map((key) => {
-      const breakpoint = breakpoints[key];
-      const gutter = grid.gutters[key];
+    ${keys(omit(grid.gutters, 'default'))
+      .map(key => {
+        const breakpoint = breakpoints[key];
+        const gutter = grid.gutters[key];
 
-      return `
+        return `
         @media screen and (min-width: ${breakpoint}px) {
           margin-right: ${gutter}px;
         }
       `;
-    }).join('')}
+      })
+      .join('')}
 
     div {
       background-position: center;

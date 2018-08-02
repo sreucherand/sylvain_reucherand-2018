@@ -1,11 +1,10 @@
-import {on, off} from 'dom-event';
+import { on, off } from 'dom-event';
 import emptyFunction from 'emptyfunction';
-import {func} from 'prop-types';
-import {PureComponent} from 'react';
+import { func } from 'prop-types';
+import { PureComponent } from 'react';
 
 export default class Resize extends PureComponent {
-
-  constructor (props, context) {
+  constructor(props, context) {
     super(props, context);
 
     this.state = {
@@ -17,7 +16,7 @@ export default class Resize extends PureComponent {
     this.handleResize = this.handleResize.bind(this);
   }
 
-  handleMeasureRef (node) {
+  handleMeasureRef(node) {
     if (!node) {
       return;
     }
@@ -28,7 +27,7 @@ export default class Resize extends PureComponent {
     });
   }
 
-  handleResize () {
+  handleResize() {
     this.setState({
       innerHeight: window.innerHeight,
       innerWidth: window.innerWidth,
@@ -36,19 +35,18 @@ export default class Resize extends PureComponent {
     });
   }
 
-  componentDidMount () {
+  componentDidMount() {
     on(window, 'resize', this.handleResize);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     off(window, 'resize', this.handleResize);
   }
 
-  render () {
+  render() {
     return this.props.children(this.state);
   }
-
 }
 
-Resize.defaultProps = {onMeasure: emptyFunction};
-Resize.propTypes = {onMeasure: func};
+Resize.defaultProps = { onMeasure: emptyFunction };
+Resize.propTypes = { onMeasure: func };

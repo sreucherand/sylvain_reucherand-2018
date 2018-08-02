@@ -1,18 +1,17 @@
 export default class EventEmitter {
-
-  constructor () {
+  constructor() {
     this._events = {};
   }
 
-  dispatch (event, ...args) {
+  dispatch(event, ...args) {
     const events = (this._events[event] || []).slice();
 
-    for (let i=0; i<events.length; i++) {
+    for (let i = 0; i < events.length; i++) {
       events[i].apply(this, args);
     }
   }
 
-  on (event, fn) {
+  on(event, fn) {
     if (typeof fn !== 'function') {
       return;
     }
@@ -26,7 +25,7 @@ export default class EventEmitter {
     this._events[event].push(fn);
   }
 
-  off (event, fn) {
+  off(event, fn) {
     let events = this._events[event];
 
     if (event === undefined) {
@@ -47,5 +46,4 @@ export default class EventEmitter {
       }
     }
   }
-
 }

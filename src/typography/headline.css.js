@@ -1,6 +1,6 @@
 import * as breakpoints from '../variables/breakpoints';
-import {sequelSansHeadline} from '../variables/font-families';
-import {headline} from '../variables/font-sizes';
+import { sequelSansHeadline } from '../variables/font-families';
+import { headline } from '../variables/font-sizes';
 
 export default `
   .headline {

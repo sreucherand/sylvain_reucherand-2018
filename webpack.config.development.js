@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   devServer: {
-    contentBase: path.join(__dirname, 'src/html'),
+    contentBase: path.join(__dirname, 'src/Html'),
     hot: true,
     port: port,
   },
@@ -90,7 +90,6 @@ module.exports = {
           },
         },
       },
-
     ],
   },
 
@@ -117,9 +116,6 @@ module.exports = {
   },
 
   resolveLoader: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src/loaders'),
-    ],
+    modules: ['node_modules', path.resolve(__dirname, 'src/loaders')],
   },
 };

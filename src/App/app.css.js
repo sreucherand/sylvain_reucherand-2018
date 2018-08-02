@@ -2,8 +2,8 @@ import keys from 'lodash/keys';
 import omit from 'lodash/omit';
 
 import * as breakpoints from '../variables/breakpoints';
-import {sequelSansBodyText} from '../variables/font-families';
-import {body} from '../variables/font-sizes';
+import { sequelSansBodyText } from '../variables/font-families';
+import { body } from '../variables/font-sizes';
 import * as grid from '../variables/grid';
 
 export default `
@@ -137,15 +137,17 @@ export default `
     top: ${grid.outerGutters.default}px;
     z-index: 10;
 
-    ${keys(omit(grid.outerGutters, 'default')).map((key) => {
-      const breakpoint = breakpoints[key];
-      const gutter = grid.outerGutters[key];
+    ${keys(omit(grid.outerGutters, 'default'))
+      .map(key => {
+        const breakpoint = breakpoints[key];
+        const gutter = grid.outerGutters[key];
 
-      return `
+        return `
         @media screen and (min-width: ${breakpoint}px) {
           top: ${gutter}px;
         }
       `;
-    }).join('')}
+      })
+      .join('')}
   }
 `;

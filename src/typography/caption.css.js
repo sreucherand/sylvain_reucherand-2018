@@ -1,6 +1,6 @@
-import {md} from '../variables/breakpoints';
-import {sequelSansBodyText} from '../variables/font-families';
-import {caption} from '../variables/font-sizes';
+import { md } from '../variables/breakpoints';
+import { sequelSansBodyText } from '../variables/font-families';
+import { caption } from '../variables/font-sizes';
 
 export default `
   .caption {

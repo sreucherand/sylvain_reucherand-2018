@@ -10,12 +10,11 @@ const defaults = {
 };
 
 export default class Spring extends EventEmitter {
-
-  static create (options) {
+  static create(options) {
     return new Spring(options);
   }
 
-  constructor (options) {
+  constructor(options) {
     super();
 
     this._listener = null;
@@ -25,7 +24,10 @@ export default class Spring extends EventEmitter {
 
     const springSystem = new rebound.SpringSystem();
 
-    this._spring = springSystem.createSpring(this.options.tension, this.options.friction);
+    this._spring = springSystem.createSpring(
+      this.options.tension,
+      this.options.friction
+    );
     this._spring.addListener({
       onSpringAtRest: this.handleSpringAtRest.bind(this),
       onSpringEndStateChange: this.handleSpringEndStateChange.bind(this),
@@ -33,19 +35,19 @@ export default class Spring extends EventEmitter {
     });
   }
 
-  handleSpringAtRest (spring) {
+  handleSpringAtRest(spring) {
     this.complete();
   }
 
-  handleSpringEndStateChange (spring) {
+  handleSpringEndStateChange(spring) {
     this.dispatch('endstateupdate', this);
   }
 
-  handleSpringUpdate (spring) {
+  handleSpringUpdate(spring) {
     this.dispatch('update', spring.getCurrentValue());
   }
 
-  complete () {
+  complete() {
     if (this._listener === null) {
       return;
     }
@@ -55,29 +57,29 @@ export default class Spring extends EventEmitter {
     }
   }
 
-  off (...args) {
+  off(...args) {
     super.off(...args);
 
     return this;
   }
 
-  on (...args) {
+  on(...args) {
     super.on(...args);
 
     return this;
   }
 
-  setAtRest () {
+  setAtRest() {
     this._spring.setAtRest();
 
     return this;
   }
 
-  stop () {
+  stop() {
     this._spring.setCurrentValue(this.value);
   }
 
-  to (value, callback = emptyFunction) {
+  to(value, callback = emptyFunction) {
     if (this.value === value) {
       callback();
 
@@ -89,24 +91,23 @@ export default class Spring extends EventEmitter {
     return this;
   }
 
-  get value () {
+  get value() {
     return this._spring.getCurrentValue();
   }
 
-  set value (value) {
+  set value(value) {
     this._spring.setCurrentValue(value);
   }
 
-  get endValue () {
+  get endValue() {
     return this._spring.getEndValue();
   }
 
-  get velocity () {
+  get velocity() {
     return this._spring.getVelocity();
   }
 
-  set velocity (velocity) {
+  set velocity(velocity) {
     this._spring.setVelocity(velocity);
   }
-
 }
