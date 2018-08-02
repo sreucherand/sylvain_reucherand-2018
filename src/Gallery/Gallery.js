@@ -12,8 +12,8 @@ import rebound from 'rebound';
 import {caption} from '../typography/caption.css';
 import grid from '../grid/grid.css';
 import html from '../html/format';
-import Resize from '../resize/resize';
-import Spring from '../spring/spring';
+import Resize from '../Resize/Resize';
+import Spring from '../Spring/Spring';
 import styles from './gallery.css';
 
 const format = (index, length, caption) => `${numeral(index).format('00')}/${numeral(length).format('00')} — ${html(caption)}`;
@@ -198,9 +198,9 @@ export default class Gallery extends PureComponent {
       <div
         key="controls"
         className={classnames(grid.column, grid.column__xs8, grid.column__sm1, grid.column__smOffset1)}>
-        <div className={styles.gallery__controls}>
+        <div className={styles.controls}>
           <div
-            className={classnames(styles.gallery__controls__control, {[styles['gallery__controls__control--disabled']]: this.state.index <= 0})}
+            className={classnames(styles.controls_control, {[styles.controls_control__disabled]: this.state.index <= 0})}
             onClick={this.handleControlLeftClick}>
             <svg viewBox="0 0 7.8 14.2">
               <polyline
@@ -210,7 +210,7 @@ export default class Gallery extends PureComponent {
           </div>
 
           <div
-            className={classnames(styles.gallery__controls__control, {[styles['gallery__controls__control--disabled']]: this.state.index >= this.props.data.length - 1})}
+            className={classnames(styles.controls_control, {[styles.controls_control__disabled]: this.state.index >= this.props.data.length - 1})}
             onClick={this.handleControlRightClick}>
             <svg viewBox="0 0 7.8 14.2">
               <polyline
@@ -230,13 +230,13 @@ export default class Gallery extends PureComponent {
               className={classnames(grid.column, grid.column__xs8, grid.column__sm4)}
               ref={measureRef}>
               <div
-                className={classnames(styles.gallery__inner, {[styles['gallery__inner--grabbing']]: this.state.grabbing})}
+                className={classnames(styles.inner, {[styles.inner__grabbing]: this.state.grabbing})}
                 ref={this.handleRef}>
                 {
                   this.props.data.map((item, index) => (
                     <div
                       key={index}
-                      className={styles.gallery__item}
+                      className={styles.item}
                       style={{transform: transform, WebkitTransform: transform}}>
                       {
                         /^image/.test(mime.lookup(item.media.url)) && (
@@ -269,7 +269,7 @@ export default class Gallery extends PureComponent {
       <div
         key="caption"
         className={classnames(grid.column, grid.column__xs8, grid.column__sm4, grid.column__smOffset2, caption)}>
-        <div className={styles.gallery__caption}>
+        <div className={styles.caption}>
           {
             this.props.data
               .reduce((previous, current, index, items) => {
@@ -291,7 +291,7 @@ export default class Gallery extends PureComponent {
               return (
                 <div
                   key={index}
-                  className={styles.gallery__caption__item}
+                  className={styles.caption_item}
                   style={{opacity: opacity}}>{format(index + 1, items.length, item.caption)}</div>
               );
             })

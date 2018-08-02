@@ -75,57 +75,55 @@ export default `
     margin: 0;
   }
 
-  .content {
-    &__main {
-      margin-bottom: 10.94em;
+  .post {
+    margin-bottom: 10.94em;
 
-      &__introduction {
-        a {
-          text-decoration: underline;
-        }
-
-        h2 + p {
-          margin-top: 3.06em;
-        }
-
-        p + p {
-          margin-top: 1em;
-        }
+    &_introduction {
+      a {
+        text-decoration: underline;
       }
 
-      &__metadata {
-        a {
-          text-decoration: none;
-
-          &:after {
-            background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='100%' width='100%' viewBox='0 0 5.1 5.1'><polygon points='5.1,0 5.1,3.7 4.1,3.7 4.1,1.7 0.7,5.1 0,4.4 3.4,1 1.4,1 1.4,0'/></svg>");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-            content: '';
-            margin-left: 0.3em;
-            padding-right: 0.5em;
-            position: relative;
-            top: -0.1em;
-          }
-        }
-
-        &__title {
-          color: #a9a9a9;
-        }
-      }
-
-      &__introduction + &__metadata,
-      &__introduction + &__gallery,
-      &__metadata + &__metadata,
-      &__metadata + &__gallery {
+      h2 + p {
         margin-top: 3.06em;
       }
+
+      p + p {
+        margin-top: 1em;
+      }
     }
 
-    &__date {
-      margin-bottom: 0.9em;
+    &_metadata {
+      a {
+        text-decoration: none;
+
+        &:after {
+          background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='100%' width='100%' viewBox='0 0 5.1 5.1'><polygon points='5.1,0 5.1,3.7 4.1,3.7 4.1,1.7 0.7,5.1 0,4.4 3.4,1 1.4,1 1.4,0'/></svg>");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          content: '';
+          margin-left: 0.3em;
+          padding-right: 0.5em;
+          position: relative;
+          top: -0.1em;
+        }
+      }
+
+      &_title {
+        color: #a9a9a9;
+      }
     }
+
+    &_introduction + &_metadata,
+    &_introduction + &_gallery,
+    &_metadata + &_metadata,
+    &_metadata + &_gallery {
+      margin-top: 3.06em;
+    }
+  }
+
+  .date {
+    margin-bottom: 0.9em;
   }
 
   #recent {
@@ -136,12 +134,12 @@ export default `
     left: 0;
     position: fixed;
     right: 0;
-    top: ${grid.gutters.default}px;
+    top: ${grid.outerGutters.default}px;
     z-index: 10;
 
-    ${keys(omit(grid.gutters, 'default')).map((key) => {
+    ${keys(omit(grid.outerGutters, 'default')).map((key) => {
       const breakpoint = breakpoints[key];
-      const gutter = grid.gutters[key];
+      const gutter = grid.outerGutters[key];
 
       return `
         @media screen and (min-width: ${breakpoint}px) {

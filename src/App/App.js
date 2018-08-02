@@ -1,7 +1,9 @@
 import classnames from 'classnames';
+import dateformat from 'dateformat';
 import 'normalize.css/normalize.css';
 import {object} from 'prop-types';
 import React, {Fragment} from 'react';
+import {Helmet} from "react-helmet";
 
 import {caption} from '../typography/caption.css';
 import html from '../html/format';
@@ -12,6 +14,23 @@ import styles from './app.css';
 
 const App = ({feed, posts}) => (
   <div>
+    <Helmet>
+      <title>{feed.data.title1[0].text}</title>
+      <meta name="description" content={feed.data.description[0].text} />
+
+      <meta property="og:title" content={feed.data.title1[0].text} />
+      <meta property="og:image" content={feed.data.image.Facebook.url} />
+      <meta property="og:url" content={feed.data.url.url} />
+      <meta property="og:site-name" content={feed.data.title1[0].text} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={feed.data.twitter} />
+      <meta name="twitter:creator" content={feed.data.twitter} />
+      <meta name="twitter:title" content={feed.data.title1[0].text} />
+      <meta name="twitter:description" content={feed.data.description[0].text} />
+      <meta name="twitter:image:src" content={feed.data.image.Twitter.url} />
+    </Helmet>
+
     <div
       className={caption}
       id={styles.title}
@@ -48,13 +67,13 @@ const App = ({feed, posts}) => (
                 case 'news':
                   return (
                     <Fragment key={post.id}>
-                      <div className={classnames(grid.row, caption, styles.content__date)}>
+                      <div className={classnames(grid.row, caption, styles.date)}>
                         <div className={classnames(grid.column, grid.column__default2, grid.column__sm2, grid.column__smOffset2)}>
-                          <div>{post.data.date}</div>
+                          <div>{dateformat(post.data.date, 'mmm yyyy', true)}</div>
                         </div>
                       </div>
 
-                      <div className={classnames(grid.row, styles.content__main)}>
+                      <div className={classnames(grid.row, styles.post)}>
                         <div className={classnames(grid.column, grid.column__default8)}>
                           <h2
                             className={headline}
@@ -68,10 +87,10 @@ const App = ({feed, posts}) => (
                 case 'project':
                   return (
                     <div
-                      className={classnames(grid.row, styles.content__main)}
+                      className={classnames(grid.row, styles.post)}
                       key={post.id}
                     >
-                      <div className={classnames(grid.column, grid.column__default8, grid.column__sm4, grid.column__smOffset2, styles.content__main__introduction)}>
+                      <div className={classnames(grid.column, grid.column__default8, grid.column__sm4, grid.column__smOffset2, styles.post_introduction)}>
                         <h2
                           className={headline}
                           dangerouslySetInnerHTML={{__html: html(post.data.title)}}
@@ -90,13 +109,13 @@ const App = ({feed, posts}) => (
                       {
                         post.data.body.map((slice, index) => (
                           <div
-                            className={classnames(grid.column, grid.column__default4, grid.column__sm2, {[grid.column__smOffset2]: index % 3 === 0}, caption, styles.content__main__metadata)}
+                            className={classnames(grid.column, grid.column__default4, grid.column__sm2, {[grid.column__smOffset2]: index % 3 === 0}, caption, styles.post_metadata)}
                             key={index}
                           >
-                            <div className={styles.content__main__metadata__title}>{slice.primary.title1[0].text}</div>
+                            <div className={styles.post_metadata_title}>{slice.primary.title1[0].text}</div>
 
                             {
-                              slice.slice_type === 'date' && <div>{slice.primary.date}</div>
+                              slice.slice_type === 'date' && <div>{dateformat(slice.primary.date, 'mmm yyyy', true)}</div>
                             }
 
                             {
@@ -114,7 +133,7 @@ const App = ({feed, posts}) => (
                         ))
                       }
 
-                      <div className={classnames(grid.column, grid.column__default8, styles.content__main__gallery)}>
+                      <div className={classnames(grid.column, grid.column__default8, styles.post_gallery)}>
                         <div className={grid.row}>
                           <Gallery data={post.data.gallery} />
                         </div>

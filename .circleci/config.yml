@@ -30,11 +30,11 @@ jobs:
       # Run tests
       - run: yarn test
 
-      - run: yarn build
+      - run: yarn static
 
       - persist_to_workspace:
           root: ~/repo
-          paths: 
+          paths:
             - public
 
   deploy:

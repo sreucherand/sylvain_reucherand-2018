@@ -9,8 +9,8 @@ export default class Resize extends PureComponent {
     super(props, context);
 
     this.state = {
-      innerHeight: window.innerHeight,
-      innerWidth: window.innerWidth,
+      innerHeight: typeof window === 'undefined' ? 0 : window.innerHeight,
+      innerWidth: typeof window === 'undefined' ? 0 : window.innerWidth,
       measureRef: this.handleMeasureRef.bind(this),
     };
 

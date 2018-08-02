@@ -1,25 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
-
-const port = process.env.PORT || 3401;
+const externals = require('webpack-node-externals');
 
 module.exports = {
-  devtool: 'inline-source-map',
-
-  devServer: {
-    contentBase: path.join(__dirname, 'src/html'),
-    hot: true,
-    port: port,
-  },
-
   entry: {
-    app: [
-      'webpack-dev-server/client?http://localhost:' + port + '/',
-      path.join(__dirname, 'src/app.development'),
-    ],
+    app: path.join(__dirname, 'src/app.static'),
   },
 
-  mode: 'development',
+  externals: externals({
+    whitelist: [
+      'hammerjs',
+      /^normalize\.css/,
+    ],
+  }),
+
+  mode: 'production',
 
   module: {
     rules: [
@@ -27,15 +22,9 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: 'css-loader/locals',
             options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64:5]',
               modules: true,
             },
           },
@@ -47,15 +36,9 @@ module.exports = {
         test: /\.css\.js$/,
         use: [
           {
-            loader: 'style-loader',
+            loader: 'css-loader/locals',
             options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64:5]',
               modules: true,
             },
           },
@@ -80,28 +63,16 @@ module.exports = {
           },
         },
       },
-
-      {
-        test: /\.woff2?$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: 'fonts/[hash].[ext]',
-          },
-        },
-      },
-
     ],
   },
 
-  optimization: {
-    noEmitOnErrors: true,
+  node: {
+    __dirname: true,
   },
 
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'public/static'),
-    publicPath: '/static/',
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'bin'),
   },
 
   plugins: [
@@ -109,10 +80,12 @@ module.exports = {
       ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
       API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 
   resolve: {
+    alias: {
+      hammerjs: path.resolve(__dirname, 'node_modules/emptyfunction'),
+    },
     extensions: ['.js'],
   },
 
@@ -122,4 +95,6 @@ module.exports = {
       path.resolve(__dirname, 'src/loaders'),
     ],
   },
+
+  target: 'node',
 };

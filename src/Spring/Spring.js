@@ -1,7 +1,7 @@
 import emptyFunction from 'emptyfunction';
 import rebound from 'rebound';
 
-import EventEmitter from '../event-emitter/event-emitter';
+import EventEmitter from '../EventEmitter/EventEmitter';
 
 const defaults = {
   delay: 0,

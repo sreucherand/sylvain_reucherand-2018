@@ -17,7 +17,7 @@ export default `
 
     ${keys(omit(grid.outerGutters, 'default')).map((key) => {
       const breakpoint = breakpoints[key];
-      const gutter = grid.gutters[key];
+      const gutter = grid.outerGutters[key];
 
       return `
         @media screen and (min-width: ${breakpoint}px) {
@@ -50,6 +50,8 @@ export default `
 
   .column {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     min-height: 1px;
     padding-left: ${grid.gutters.default / 2}px;
     padding-right: ${grid.gutters.default / 2}px;

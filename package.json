@@ -12,29 +12,33 @@
     "babel-loader": "^8.0.0-beta",
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
+    "fs-extra": "^7.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "postcss-loader": "^2.1.6",
     "postcss-nested": "^3.0.0",
     "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.3",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-manifest-plugin": "^2.0.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "build": "npm run build:css && npm run build:js && npm run build:views",
-    "build:css": "stylus ./src/app.styl --include node_modules/ --include-css --print | cssnano > ./public/static/app.bundle.css",
-    "build:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./public/static' --output-filename='[name].bundle.js' -p --progress",
-    "build:views": "pug ./src/views/index.pug --obj ./src/data/expose.js --out ./public/",
+    "build": "NODE_ENV=production webpack --config webpack.config.production.js --progress",
     "eslint": "eslint src/**/*.js; exit 0",
+    "poststatic": "rm -rf bin/",
     "prebuild": "rm -rf public/ && mkdir -p public/static",
     "prestart": "rm -rf public/ && mkdir -p public/static",
-    "server": "nodemon --watch ./server.js --watch ./src/data server.js",
+    "prestatic": "rm -rf bin/ && npm run build",
     "start": "HOT=1 NODE_ENV=development webpack-dev-server --config webpack.config.development.js",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "watch:css": "stylus ./src/app.styl --include node_modules/ --include-css --out ./public/static/app.bundle.css --use autoprefixer-stylus --watch",
-    "watch:js": "webpack app='./src/app.js' --module-bind js=babel-loader --output-path='./public/static' --output-filename='[name].bundle.js' --watch"
+    "static": "NODE_ENV=production webpack --config webpack.config.static.js --progress && find bin/*.js | xargs -I % node %",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "dateformat": "^3.0.3",
     "dom-event": "^1.0.0",
     "emptyfunction": "^1.0.0",
     "escape-html": "^1.0.3",
@@ -47,6 +51,7 @@
     "prismic-richtext": "^0.4.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
     "rebound": "^0.1.0"
   }
 }

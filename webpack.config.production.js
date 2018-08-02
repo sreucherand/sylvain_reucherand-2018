@@ -1,41 +1,27 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
-
-const port = process.env.PORT || 3401;
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
-  devtool: 'inline-source-map',
-
-  devServer: {
-    contentBase: path.join(__dirname, 'src/html'),
-    hot: true,
-    port: port,
-  },
-
   entry: {
-    app: [
-      'webpack-dev-server/client?http://localhost:' + port + '/',
-      path.join(__dirname, 'src/app.development'),
-    ],
+    app: path.join(__dirname, 'src/app.development'),
   },
 
-  mode: 'development',
+  mode: 'production',
 
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64:5]',
               modules: true,
             },
           },
@@ -46,16 +32,11 @@ module.exports = {
       {
         test: /\.css\.js$/,
         use: [
-          {
-            loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
+              localIdentName: '[hash:base64:5]',
               modules: true,
             },
           },
@@ -90,16 +71,18 @@ module.exports = {
           },
         },
       },
-
     ],
   },
 
   optimization: {
-    noEmitOnErrors: true,
+    minimizer: [
+      new OptimizeCSSAssetsPlugin(),
+      new UglifyJsPlugin(),
+    ]
   },
 
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'public/static'),
     publicPath: '/static/',
   },
@@ -109,7 +92,8 @@ module.exports = {
       ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
       API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
+    new ManifestPlugin(),
   ],
 
   resolve: {
