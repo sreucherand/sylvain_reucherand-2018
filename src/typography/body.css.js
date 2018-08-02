@@ -1,6 +1,6 @@
 import * as breakpoints from '../variables/breakpoints';
-import {sequelSansBodyText} from '../variables/font-families';
-import {body} from '../variables/font-sizes';
+import { sequelSansBodyText } from '../variables/font-families';
+import { body } from '../variables/font-sizes';
 
 export default `
   .body {

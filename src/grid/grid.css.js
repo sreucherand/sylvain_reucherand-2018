@@ -15,17 +15,19 @@ export default `
     padding-left: ${grid.outerGutters.default}px;
     padding-right: ${grid.outerGutters.default}px;
 
-    ${keys(omit(grid.outerGutters, 'default')).map((key) => {
-      const breakpoint = breakpoints[key];
-      const gutter = grid.outerGutters[key];
+    ${keys(omit(grid.outerGutters, 'default'))
+      .map(key => {
+        const breakpoint = breakpoints[key];
+        const gutter = grid.outerGutters[key];
 
-      return `
+        return `
         @media screen and (min-width: ${breakpoint}px) {
           padding-left: ${gutter}px;
           padding-right: ${gutter}px;
         }
       `;
-    }).join('')}
+      })
+      .join('')}
   }
 
   .row {
@@ -35,17 +37,19 @@ export default `
     margin-left: ${-grid.gutters.default / 2}px;
     margin-right: ${-grid.gutters.default / 2}px;
 
-    ${keys(omit(grid.gutters, 'default')).map((key) => {
-      const breakpoint = breakpoints[key];
-      const gutter = grid.gutters[key];
+    ${keys(omit(grid.gutters, 'default'))
+      .map(key => {
+        const breakpoint = breakpoints[key];
+        const gutter = grid.gutters[key];
 
-      return `
+        return `
         @media screen and (min-width: ${breakpoint}px) {
           margin-left: ${-gutter / 2}px;
           margin-right: ${-gutter / 2}px;
         }
       `;
-    }).join('')}
+      })
+      .join('')}
   }
 
   .column {
@@ -56,19 +60,23 @@ export default `
     padding-left: ${grid.gutters.default / 2}px;
     padding-right: ${grid.gutters.default / 2}px;
 
-    ${keys(omit(grid.gutters, 'default')).map((key) => {
-      const breakpoint = breakpoints[key];
-      const gutter = grid.gutters[key];
+    ${keys(omit(grid.gutters, 'default'))
+      .map(key => {
+        const breakpoint = breakpoints[key];
+        const gutter = grid.gutters[key];
 
-      return `
+        return `
         @media screen and (min-width: ${breakpoint}px) {
           padding-left: ${gutter / 2}px;
           padding-right: ${gutter / 2}px;
         }
       `;
-    }).join('')}
+      })
+      .join('')}
 
-    ${range(grid.columnCount + 1).map(index => `
+    ${range(grid.columnCount + 1)
+      .map(
+        index => `
       &__default${index} {
         flex-basis: ${(100 / grid.columnCount) * index}%;
         max-width: ${(100 / grid.columnCount) * index}%;
@@ -77,12 +85,17 @@ export default `
       &__defaultOffset${index} {
         margin-left: ${(100 / grid.columnCount) * index}%;
       }
-    `).join('')}
+    `
+      )
+      .join('')}
 
-    ${keys(breakpoints).map((key) => {
-      const breakpoint = breakpoints[key];
+    ${keys(breakpoints)
+      .map(key => {
+        const breakpoint = breakpoints[key];
 
-      return range(grid.columnCount + 1).map(index => `
+        return range(grid.columnCount + 1)
+          .map(
+            index => `
         &__${key}${index} {
           @media screen and (min-width: ${breakpoint}px) {
             flex-basis: ${(100 / grid.columnCount) * index}%;
@@ -95,7 +108,10 @@ export default `
             margin-left: ${(100 / grid.columnCount) * index}%;
           }
         }
-      `).join('');
-    }).join('')}
+      `
+          )
+          .join('');
+      })
+      .join('')}
   }
 `;

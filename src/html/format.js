@@ -1,7 +1,7 @@
 import escapeHtml from 'escape-html';
 import PrismicRichText from 'prismic-richtext';
 
-export default (text) => {
+export default text => {
   const serialize = (type, element, content, children) => {
     switch (type) {
       case PrismicRichText.Elements.em:
@@ -10,7 +10,11 @@ export default (text) => {
 
       case PrismicRichText.Elements.hyperlink:
         if (element.data.link_type === 'Web') {
-          return `<a href="${element.data.url}"${element.data.target ? ` target="${element.data.target}" rel="noopener"` : ''}>${children.join('')}</a>`;
+          return `<a href="${element.data.url}"${
+            element.data.target
+              ? ` target="${element.data.target}" rel="noopener"`
+              : ''
+          }>${children.join('')}</a>`;
         }
 
         return '';
@@ -23,7 +27,5 @@ export default (text) => {
     }
   };
 
-  return PrismicRichText
-    .serialize([].concat(text), serialize)
-    .join('');
+  return PrismicRichText.serialize([].concat(text), serialize).join('');
 };
