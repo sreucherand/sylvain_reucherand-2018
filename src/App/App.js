@@ -6,7 +6,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { caption } from '../typography/caption.css';
-import html from '../html/format';
+import html from '../Html/format';
 import Gallery from '../Gallery/Gallery';
 import grid from '../grid/grid.css';
 import { headline } from '../typography/headline.css';

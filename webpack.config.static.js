@@ -8,10 +8,7 @@ module.exports = {
   },
 
   externals: externals({
-    whitelist: [
-      'hammerjs',
-      /^normalize\.css/,
-    ],
+    whitelist: ['hammerjs', /^normalize\.css/],
   }),
 
   mode: 'production',
@@ -90,10 +87,7 @@ module.exports = {
   },
 
   resolveLoader: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src/loaders'),
-    ],
+    modules: ['node_modules', path.resolve(__dirname, 'src/loaders')],
   },
 
   target: 'node',

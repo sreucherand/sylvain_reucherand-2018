@@ -11,7 +11,7 @@ import rebound from 'rebound';
 
 import { caption } from '../typography/caption.css';
 import grid from '../grid/grid.css';
-import html from '../html/format';
+import html from '../Html/format';
 import Resize from '../Resize/Resize';
 import Spring from '../Spring/Spring';
 import styles from './gallery.css';

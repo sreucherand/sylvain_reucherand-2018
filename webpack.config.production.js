@@ -75,10 +75,7 @@ module.exports = {
   },
 
   optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin(),
-      new UglifyJsPlugin(),
-    ]
+    minimizer: [new OptimizeCSSAssetsPlugin(), new UglifyJsPlugin()],
   },
 
   output: {
@@ -92,7 +89,7 @@ module.exports = {
       ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
       API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
     }),
-    new MiniCssExtractPlugin({filename: '[name].[contenthash].css'}),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new ManifestPlugin(),
   ],
 
@@ -101,9 +98,6 @@ module.exports = {
   },
 
   resolveLoader: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, 'src/loaders'),
-    ],
+    modules: ['node_modules', path.resolve(__dirname, 'src/loaders')],
   },
 };
