@@ -3,6 +3,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+// .BundleAnalyzerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
@@ -91,6 +93,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new ManifestPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 
   resolve: {

@@ -3,7 +3,6 @@ import clamp from 'lodash/clamp';
 import classnames from 'classnames';
 import Hammer from 'hammerjs';
 import includes from 'lodash/includes';
-import mime from 'mime-types';
 import numeral from 'numeral';
 import { bool, array } from 'prop-types';
 import React, { PureComponent } from 'react';
@@ -262,7 +261,7 @@ export default class Gallery extends PureComponent {
                   className={styles.item}
                   style={{ transform: transform, WebkitTransform: transform }}
                 >
-                  {/^image/.test(mime.lookup(item.media.url)) && (
+                  {item.media.kind === 'image' && (
                     <div
                       style={{
                         backgroundImage: `url('${item.media.url}')`,
@@ -273,7 +272,7 @@ export default class Gallery extends PureComponent {
                     />
                   )}
 
-                  {/^video/.test(mime.lookup(item.media.url)) && (
+                  {item.media.kind !== 'image' && (
                     <div>
                       <Player
                         loop
