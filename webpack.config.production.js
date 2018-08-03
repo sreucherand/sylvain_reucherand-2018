@@ -6,6 +6,7 @@ const webpack = require('webpack');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 // .BundleAnalyzerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -87,13 +88,25 @@ module.exports = {
   },
 
   plugins: [
+    // new BundleAnalyzerPlugin(),
     new webpack.DefinePlugin({
       ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
       API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
     }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new ManifestPlugin(),
-    // new BundleAnalyzerPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      runtimeCaching: [
+        {
+          handler: 'networkFirst',
+          urlPattern: /\.html$/,
+        },
+        {
+          handler: 'cacheFirst',
+          urlPattern: /^https?:\/\/prismic-io\.s3\.amazonaws\.com\//,
+        },
+      ],
+    }),
   ],
 
   resolve: {

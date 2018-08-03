@@ -198,4 +198,10 @@ const App = ({ feed, posts }) => (
 
 App.propTypes = { feed: object.isRequired, posts: array.isRequired };
 
+if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/static/service-worker.js')
+    .catch(() => console.warn('Could not register the service worker!'));
+}
+
 export default App;
