@@ -154,7 +154,13 @@ const App = ({ feed, posts }) => (
                         {slice.slice_type === 'links' &&
                           slice.items.map((item, index) => (
                             <p key={index}>
-                              <a href={item.link.url} target={item.link.target}>
+                              <a
+                                href={item.link.url}
+                                target={item.link.target}
+                                {...(item.link.target === '_blank'
+                                  ? { rel: 'noopener' }
+                                  : {})}
+                              >
                                 {item.title1[0].text}
                               </a>
                             </p>
@@ -191,5 +197,11 @@ const App = ({ feed, posts }) => (
 );
 
 App.propTypes = { feed: object.isRequired, posts: array.isRequired };
+
+if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/static/service-worker.js')
+    .catch(() => console.warn('Could not register the service worker!'));
+}
 
 export default App;
