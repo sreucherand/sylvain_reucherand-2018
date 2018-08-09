@@ -10,6 +10,9 @@ module.exports = {
     contentBase: path.join(__dirname, 'src/Html'),
     hot: true,
     port: port,
+    proxy: {
+      '/graphql': 'http://localhost:4000',
+    },
   },
 
   entry: {
@@ -82,6 +85,12 @@ module.exports = {
       },
 
       {
+        exclude: /node_modules/,
+        test: /\.gql$/,
+        use: 'raw-loader',
+      },
+
+      {
         test: /\.woff2?$/,
         use: {
           loader: 'file-loader',
@@ -103,13 +112,7 @@ module.exports = {
     publicPath: '/static/',
   },
 
-  plugins: [
-    new webpack.DefinePlugin({
-      ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
-      API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 
   resolve: {
     extensions: ['.js'],

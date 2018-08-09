@@ -1,32 +1,40 @@
 /* eslint-disable react/no-danger */
 import chalk from 'chalk';
 import fs from 'fs-extra';
+import { graphql } from 'graphql';
+import { makeExecutableSchema } from 'graphql-tools';
 import path from 'path';
-import Prismic from 'prismic-javascript';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import manifest from '../public/static/manifest.json';
-import Html from './Html/Html';
 import App from './App/App';
+import Html from './Html/Html';
+import manifest from '../public/static/manifest.json';
+import resolvers from './resolvers/resolvers';
+import types from './schema/types';
+import query from './query/query.gql';
 
 console.log(`${'\n'}${chalk.bold('— Static files')}`);
 
 const filename = path.resolve('public/index.html');
 
-Prismic.getApi(API_ENDPOINT, { accessToken: ACCESS_TOKEN })
-  .then(api =>
-    Promise.all([
-      api.getSingle('feed'),
-      api.query(Prismic.Predicates.any('document.type', ['news', 'project'])),
-    ])
-  )
-  .then(([feed, { results }]) => {
+const schema = makeExecutableSchema({
+  resolvers: resolvers,
+  typeDefs: types,
+});
+
+graphql(schema, query)
+  .then(({ data }) => {
     const output = renderToStaticMarkup(
-      <Html css={manifest['app.css']} js={manifest['app.js']} name="app">
+      <Html
+        data={JSON.stringify(data.feed.data)}
+        css={manifest['app.css']}
+        js={manifest['app.js']}
+        name="app"
+      >
         <div
           dangerouslySetInnerHTML={{
-            __html: renderToStaticMarkup(<App feed={feed} posts={results} />),
+            __html: renderToStaticMarkup(<App data={data.feed.data} />),
           }}
           id="container"
         />

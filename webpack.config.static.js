@@ -60,6 +60,12 @@ module.exports = {
           },
         },
       },
+
+      {
+        exclude: /node_modules/,
+        test: /\.gql$/,
+        use: 'raw-loader',
+      },
     ],
   },
 
@@ -71,13 +77,6 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'bin'),
   },
-
-  plugins: [
-    new webpack.DefinePlugin({
-      ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
-      API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
-    }),
-  ],
 
   resolve: {
     alias: {
