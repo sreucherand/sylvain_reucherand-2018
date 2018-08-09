@@ -1,7 +1,7 @@
-import escapeHtml from 'escape-html';
-import PrismicRichText from 'prismic-richtext';
+const escapeHtml = require('escape-html');
+const PrismicRichText = require('prismic-richtext');
 
-export default text => {
+module.exports = text => {
   const serialize = (type, element, content, children) => {
     switch (type) {
       case PrismicRichText.Elements.em:

@@ -1,19 +1,20 @@
-import Prismic from 'prismic-javascript';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App/App';
+import query from './query/query.gql';
 
-Prismic.getApi(API_ENDPOINT, { accessToken: ACCESS_TOKEN })
-  .then(api =>
-    Promise.all([
-      api.getSingle('feed'),
-      api.query(Prismic.Predicates.any('document.type', ['news', 'project'])),
-    ])
-  )
-  .then(([feed, { results }]) => {
+fetch('/graphql', {
+  body: JSON.stringify({ query }),
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  method: 'POST',
+})
+  .then(response => response.json())
+  .then(({ data }) => {
     ReactDOM.render(
-      <App feed={feed} posts={results} />,
+      <App data={data.feed.data} />,
       document.getElementById('container')
     );
   })

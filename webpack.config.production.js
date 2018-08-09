@@ -10,7 +10,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: path.join(__dirname, 'src/app.development'),
+    app: path.join(__dirname, 'src/app.production'),
   },
 
   mode: 'production',
@@ -89,10 +89,6 @@ module.exports = {
 
   plugins: [
     // new BundleAnalyzerPlugin(),
-    new webpack.DefinePlugin({
-      ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
-      API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
-    }),
     new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
     new ManifestPlugin(),
     new WorkboxPlugin.GenerateSW({

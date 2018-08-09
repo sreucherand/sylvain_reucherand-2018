@@ -2,7 +2,7 @@ import { node, string } from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
 
-const Html = ({ children, css, js, name }) => {
+const Html = ({ children, css, data, js, name }) => {
   const helmet = Helmet.renderStatic();
 
   return (
@@ -23,6 +23,14 @@ const Html = ({ children, css, js, name }) => {
 
       <body>
         {children}
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.__data = ${data};
+        `,
+          }}
+        />
 
         <script defer src={js} />
         <script
@@ -47,6 +55,7 @@ const Html = ({ children, css, js, name }) => {
 Html.propTypes = {
   children: node.isRequired,
   css: string.isRequired,
+  data: string.isRequired,
   js: string.isRequired,
   name: string.isRequired,
 };
