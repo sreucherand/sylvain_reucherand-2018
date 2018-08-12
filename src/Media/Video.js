@@ -52,6 +52,7 @@ export default class Image extends Media {
     }
 
     this.videoElement.addEventListener('canplaythrough', this.onLoad, false);
+    this.videoElement.load();
   };
 
   render() {
