@@ -7,9 +7,9 @@ jobs:
   build:
     docker:
       - image: sreucherand/circleci-node-ffmpeg:0.0.1
-      auth:
-        username: $DOCKER_USERNAME
-        password: $DOCKER_PASSWORD
+        auth:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
 
     working_directory: ~/repo
 
