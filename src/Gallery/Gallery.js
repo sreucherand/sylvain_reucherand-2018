@@ -1,67 +1,24 @@
-import assign from 'lodash/assign';
 import clamp from 'lodash/clamp';
 import classnames from 'classnames';
 import Hammer from 'hammerjs';
-import includes from 'lodash/includes';
+import 'intersection-observer';
 import numeral from 'numeral';
-import { bool, array } from 'prop-types';
+import { array } from 'prop-types';
 import React, { PureComponent } from 'react';
 import rebound from 'rebound';
 
 import { caption } from '../typography/caption.css';
+import styles from './gallery.css';
 import grid from '../grid/grid.css';
+import Image from '../Media/Image';
 import Resize from '../Resize/Resize';
 import Spring from '../Spring/Spring';
-import styles from './gallery.css';
+import Video from '../Media/Video';
 
 const format = (index, length, caption) =>
   `${numeral(index).format('00')}/${numeral(length).format('00')} — ${
     caption.text
   }`;
-
-class Player extends PureComponent {
-  static propTypes = {
-    play: bool.isRequired,
-  };
-
-  constructor(props) {
-    super(props);
-
-    this.handleRef = this.handleRef.bind(this);
-  }
-
-  handleRef(node) {
-    if (!node || this.video !== undefined) {
-      return;
-    }
-
-    this.video = node;
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.video === undefined || this.props.play === prevProps.play) {
-      return;
-    }
-
-    if (this.props.play === true) {
-      this.video.play();
-      return;
-    }
-
-    this.video.pause();
-  }
-
-  render() {
-    const props = assign({}, this.props, {
-      autoPlay: this.props.play,
-      ref: this.handleRef,
-    });
-
-    delete props.play;
-
-    return React.createElement('video', props);
-  }
-}
 
 export default class Gallery extends PureComponent {
   static propTypes = {
@@ -74,7 +31,6 @@ export default class Gallery extends PureComponent {
     this._currentIndex = 0;
 
     this.state = {
-      cache: [],
       grabbing: false,
       index: 0,
       progress: 0,
@@ -111,16 +67,6 @@ export default class Gallery extends PureComponent {
 
     this.gestureManager.on('press', this.handlePress.bind(this));
     this.gestureManager.on('pressup', this.handlePressUp.bind(this));
-
-    for (let item of this.props.data) {
-      if (item.media.kind === 'image') {
-        const image = new window.Image();
-
-        image.onload = () =>
-          this.setState(state => ({ cache: [...state.cache, item.media.url] }));
-        image.src = item.media.url;
-      }
-    }
   }
 
   handleControlLeftClick() {
@@ -260,29 +206,19 @@ export default class Gallery extends PureComponent {
                   className={styles.item}
                   style={{ transform: transform, WebkitTransform: transform }}
                 >
-                  {item.media.kind === 'image' && (
-                    <div
-                      style={{
-                        backgroundImage: `url('${item.media.url}')`,
-                        opacity: includes(this.state.cache, item.media.url)
-                          ? 1
-                          : 0,
-                      }}
-                    />
-                  )}
+                  <div className={styles.item_media}>
+                    {item.media.kind === 'image' && (
+                      <Image base64={item.media.base64} url={item.media.url} />
+                    )}
 
-                  {item.media.kind !== 'image' && (
-                    <div>
-                      <Player
-                        loop
-                        muted
-                        playsInline
+                    {item.media.kind === 'video' && (
+                      <Video
+                        base64={item.media.base64}
                         play={index === this.state.index}
-                        preload="auto"
-                        src={item.media.url}
+                        url={item.media.url}
                       />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

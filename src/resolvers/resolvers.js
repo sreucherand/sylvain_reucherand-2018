@@ -1,3 +1,4 @@
+const childProcess = require('child_process');
 const mime = require('mime-types');
 const path = require('path');
 const request = require('request');
@@ -32,13 +33,15 @@ module.exports = {
 
   File: {
     __resolveType(document) {
-      switch (document.kind) {
-        case 'image':
-          return 'Image';
-
-        default:
-          return 'Document';
+      if (document.kind === 'image') {
+        return 'Image';
       }
+
+      if (/^video\//.test(mime.lookup(document.url)) === true) {
+        return 'Video';
+      }
+
+      return 'Document';
     },
   },
 
@@ -145,5 +148,48 @@ module.exports = {
   Text: {
     html: title => format(title),
     text: title => title[0].text,
+  },
+
+  Video: {
+    base64(media) {
+      const basename = path.basename(media.url);
+      const cachedBase64 = cache.get(basename);
+
+      if (cachedBase64 !== undefined) {
+        return cachedBase64;
+      }
+
+      return new Promise((resolve, reject) => {
+        const ffmpeg = childProcess.spawn('ffmpeg', [
+          '-i',
+          media.url,
+          '-loglevel',
+          'panic',
+          '-vf',
+          '"select=eq(n,0)"',
+          '-vf',
+          'scale=20:-2',
+          '-q:v',
+          1,
+          '-vframes',
+          1,
+          '-f',
+          'image2',
+          'pipe:',
+        ]);
+
+        ffmpeg.stdout.on('data', data => {
+          const base64 = cache.set(
+            basename,
+            `data:image/jpeg;base64,${data.toString('base64')}`
+          );
+
+          resolve(base64);
+        });
+
+        ffmpeg.stderr.on('data', reject);
+      });
+    },
+    kind: () => 'video',
   },
 };

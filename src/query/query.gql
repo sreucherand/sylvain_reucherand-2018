@@ -34,6 +34,11 @@
                   kind
                   url
                 }
+                ... on Video {
+                  base64
+                  kind
+                  url
+                }
               }
             }
             title {

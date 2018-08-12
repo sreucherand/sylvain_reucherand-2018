@@ -17,4 +17,10 @@ module.exports = `
     url: String
     width: String
   }
+
+  type Video implements File {
+    base64: String
+    kind: String!
+    url: String
+  }
 `;
