@@ -2,6 +2,7 @@ import { bool, string } from 'prop-types';
 import React from 'react';
 
 import Media from './Media';
+import styles from './media.css';
 
 export default class Image extends Media {
   static defaultProps = { play: false };
@@ -61,7 +62,12 @@ export default class Image extends Media {
 
     return (
       <>
-        <img alt="" ref={this.element} src={base64} />
+        <img
+          alt=""
+          className={styles.placeholder}
+          ref={this.element}
+          src={base64}
+        />
 
         {isVisible && (
           <video
