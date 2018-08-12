@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const externals = require('webpack-node-externals');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
   },
 
   externals: externals({
-    whitelist: ['hammerjs', /^normalize\.css/],
+    whitelist: ['hammerjs', 'intersection-observer', /^normalize\.css/],
   }),
 
   mode: 'production',
@@ -81,6 +80,10 @@ module.exports = {
   resolve: {
     alias: {
       hammerjs: path.resolve(__dirname, 'node_modules/emptyfunction'),
+      'intersection-observer': path.resolve(
+        __dirname,
+        'node_modules/emptyfunction'
+      ),
     },
     extensions: ['.js'],
   },

@@ -4,6 +4,14 @@
       description {
         text
       }
+      image {
+        Facebook {
+          url
+        }
+        Twitter {
+          url
+        }
+      }
       posts {
         ... on News {
           data {
@@ -30,6 +38,11 @@
                   url
                 }
                 ... on Image {
+                  base64
+                  kind
+                  url
+                }
+                ... on Video {
                   base64
                   kind
                   url

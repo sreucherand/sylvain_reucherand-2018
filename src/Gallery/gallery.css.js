@@ -108,7 +108,6 @@ export default `
   }
 
   .item {
-    background-color: #e8e7e4;
     flex-basis: 100%;
     flex-shrink: 0;
     margin-right: ${grid.gutters.default}px;
@@ -126,22 +125,23 @@ export default `
       })
       .join('')}
 
-    div {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    &_media {
       overflow: hidden;
       padding-top: 56.25%;
       position: relative;
-      transition: opacity 400ms;
 
+      img,
       video {
-        height: calc(100% + 1px);
+        height: 100%;
         left: 0;
         object-fit: cover;
         position: absolute;
         top: 0;
-        width: calc(100% + 1px);
+        -webkit-user-drag: none;
+        user-drag: none;
+        user-select: none;
+        transition: opacity 400ms;
+        width: 100%;
       }
     }
   }

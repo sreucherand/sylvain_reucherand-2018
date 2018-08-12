@@ -1,6 +1,5 @@
 module.exports = `
   interface File {
-    kind: String!
     url: String
   }
 
@@ -16,5 +15,11 @@ module.exports = `
     size: String
     url: String
     width: String
+  }
+
+  type Video implements File {
+    base64: String
+    kind: String!
+    url: String
   }
 `;
