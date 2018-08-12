@@ -36,7 +36,11 @@ export default class Image extends Media {
           />
         )}
 
-        <noscript>{`<img alt="" src="${url}" />`}</noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<img alt="" src="${url}" />`,
+          }}
+        />
       </>
     );
   }
