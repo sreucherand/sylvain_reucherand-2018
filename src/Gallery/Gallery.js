@@ -1,7 +1,6 @@
 import clamp from 'lodash/clamp';
 import classnames from 'classnames';
 import Hammer from 'hammerjs';
-import 'intersection-observer';
 import numeral from 'numeral';
 import { array } from 'prop-types';
 import React, { PureComponent } from 'react';
