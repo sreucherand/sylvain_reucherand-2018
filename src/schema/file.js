@@ -1,6 +1,5 @@
 module.exports = `
   interface File {
-    kind: String!
     url: String
   }
 

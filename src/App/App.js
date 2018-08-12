@@ -18,7 +18,7 @@ const App = ({ data }) => (
       <meta name="description" content={data.description.text} />
 
       <meta property="og:title" content={data.title.text} />
-      <meta property="og:image" content={''} />
+      <meta property="og:image" content={data.image.Facebook.url} />
       <meta property="og:url" content={data.url.url} />
       <meta property="og:site-name" content={data.title.text} />
 
@@ -27,7 +27,7 @@ const App = ({ data }) => (
       <meta name="twitter:creator" content={data.twitter} />
       <meta name="twitter:title" content={data.title.text} />
       <meta name="twitter:description" content={data.description.text} />
-      <meta name="twitter:image:src" content={''} />
+      <meta name="twitter:image:src" content={data.image.Twitter.url} />
     </Helmet>
 
     <div className={caption} id={styles.title}>
