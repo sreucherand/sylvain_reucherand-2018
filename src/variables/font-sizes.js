@@ -1,5 +1,3 @@
-import * as breakpoints from '../variables/breakpoints';
-
 export const body = {
   default: {
     fontSize: 14,

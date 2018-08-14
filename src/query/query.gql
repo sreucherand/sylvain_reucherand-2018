@@ -1,0 +1,108 @@
+{
+  feed {
+    data {
+      description {
+        text
+      }
+      image {
+        Facebook {
+          url
+        }
+        Twitter {
+          url
+        }
+      }
+      posts {
+        ... on News {
+          data {
+            date
+            title {
+              html
+            }
+          }
+          id
+          type
+        }
+        ... on Project {
+          data {
+            description {
+              html
+            }
+            gallery {
+              caption {
+                text
+              }
+              media {
+                ... on Document {
+                  kind
+                  url
+                }
+                ... on Image {
+                  base64
+                  kind
+                  url
+                }
+                ... on Video {
+                  base64
+                  kind
+                  url
+                }
+              }
+            }
+            title {
+              text
+            }
+          }
+          id
+          metadata {
+            ... on MetadataDate {
+              data {
+                date
+                title {
+                  text
+                }
+              }
+              type
+            }
+            ... on MetadataLink {
+              data {
+                links {
+                  link {
+                    target
+                    url
+                  }
+                  title {
+                    text
+                  }
+                }
+                title {
+                  text
+                }
+              }
+              type
+            }
+            ... on MetadataText {
+              data {
+                items {
+                  text
+                }
+                title {
+                  text
+                }
+              }
+              type
+            }
+          }
+          type
+        }
+      }
+      title {
+        text
+      }
+      twitter
+      url {
+        url
+      }
+    }
+  }
+}

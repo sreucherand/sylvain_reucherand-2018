@@ -1,0 +1,4 @@
+.placeholder {
+  filter: blur(8px);
+  transform: scale(1.1);
+}

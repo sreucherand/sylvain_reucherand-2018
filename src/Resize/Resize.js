@@ -49,4 +49,4 @@ export default class Resize extends PureComponent {
 }
 
 Resize.defaultProps = { onMeasure: emptyFunction };
-Resize.propTypes = { onMeasure: func };
+Resize.propTypes = { children: func.isRequired, onMeasure: func };

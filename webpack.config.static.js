@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const externals = require('webpack-node-externals');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
   },
 
   externals: externals({
-    whitelist: ['hammerjs', /^normalize\.css/],
+    whitelist: ['hammerjs', 'intersection-observer', /^normalize\.css/],
   }),
 
   mode: 'production',
@@ -60,6 +59,12 @@ module.exports = {
           },
         },
       },
+
+      {
+        exclude: /node_modules/,
+        test: /\.gql$/,
+        use: 'raw-loader',
+      },
     ],
   },
 
@@ -72,16 +77,13 @@ module.exports = {
     path: path.resolve(__dirname, 'bin'),
   },
 
-  plugins: [
-    new webpack.DefinePlugin({
-      ACCESS_TOKEN: JSON.stringify(process.env.ACCESS_TOKEN),
-      API_ENDPOINT: JSON.stringify(process.env.API_ENDPOINT),
-    }),
-  ],
-
   resolve: {
     alias: {
       hammerjs: path.resolve(__dirname, 'node_modules/emptyfunction'),
+      'intersection-observer': path.resolve(
+        __dirname,
+        'node_modules/emptyfunction'
+      ),
     },
     extensions: ['.js'],
   },
