@@ -1,5 +1,5 @@
 {
-  "name": "sylvain-reucherand-landing-page",
+  "name": "sylvain_reucherand-2018",
   "version": "1.0.0",
   "main": "server.js",
   "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
@@ -76,5 +76,13 @@
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "rebound": "^0.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreucherand/sylvain_reucherand-2018.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sreucherand/sylvain_reucherand-2018/issues"
+  },
+  "homepage": "https://github.com/sreucherand/sylvain_reucherand-2018#readme"
 }

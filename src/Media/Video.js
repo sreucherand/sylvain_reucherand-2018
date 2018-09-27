@@ -83,7 +83,7 @@ export default class Image extends Media {
 
         <noscript
           dangerouslySetInnerHTML={{
-            __html: `<video controls loop muted playsInline src="${url}" />`,
+            __html: `<video controls loop muted playsInline src="${url}"></video>`,
           }}
         />
       </>
