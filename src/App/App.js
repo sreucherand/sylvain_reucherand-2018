@@ -138,6 +138,10 @@ const App = ({ data }) => (
                                 : {})}
                             >
                               {item.title.text}
+                              &nbsp;
+                              <svg viewBox="0 0 5 5">
+                                <polygon points="0.7,5.1 0,4.4 3.4,1 1.4,1 1.4,0 5.1,0 5.1,3.7 4.1,3.7 4.1,1.7" />
+                              </svg>
                             </a>
                           </p>
                         ))}

@@ -20,8 +20,8 @@ module.exports = {
           {
             loader: 'css-loader/locals',
             options: {
-              localIdentName: '[hash:base64:5]',
-              modules: true,
+              importLoaders: 1,
+              modules: { localIdentName: '[hash:base64:5]' },
             },
           },
           'postcss-loader',
@@ -34,8 +34,8 @@ module.exports = {
           {
             loader: 'css-loader/locals',
             options: {
-              localIdentName: '[hash:base64:5]',
-              modules: true,
+              importLoaders: 3,
+              modules: { localIdentName: '[hash:base64:5]' },
             },
           },
           'postcss-loader',
