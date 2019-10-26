@@ -31,15 +31,15 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'css-loader',
             options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              modules: true,
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+              sourceMap: true,
             },
           },
           'postcss-loader',
@@ -51,15 +51,15 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'css-loader',
             options: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-              modules: true,
+              importLoaders: 3,
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+              },
+              sourceMap: true,
             },
           },
           'postcss-loader',

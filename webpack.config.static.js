@@ -18,10 +18,11 @@ module.exports = {
         test: /\.css$/,
         use: [
           {
-            loader: 'css-loader/locals',
+            loader: 'css-loader',
             options: {
-              localIdentName: '[hash:base64:5]',
-              modules: true,
+              importLoaders: 1,
+              modules: { localIdentName: '[hash:base64:5]' },
+              onlyLocals: true,
             },
           },
           'postcss-loader',
@@ -32,10 +33,11 @@ module.exports = {
         test: /\.css\.js$/,
         use: [
           {
-            loader: 'css-loader/locals',
+            loader: 'css-loader',
             options: {
-              localIdentName: '[hash:base64:5]',
-              modules: true,
+              importLoaders: 3,
+              modules: { localIdentName: '[hash:base64:5]' },
+              onlyLocals: true,
             },
           },
           'postcss-loader',

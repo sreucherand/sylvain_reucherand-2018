@@ -2,6 +2,7 @@ import keys from 'lodash/keys';
 import omit from 'lodash/omit';
 
 import * as breakpoints from '../variables/breakpoints';
+import * as colors from '../variables/colors';
 import { sequelSansBodyText } from '../variables/font-families';
 import { body } from '../variables/font-sizes';
 import * as grid from '../variables/grid';
@@ -44,11 +45,17 @@ export default `
     overflow-x: hidden;
   }
   body {
-    background-color: #efeeec;
+    background-color: ${colors.background.light};
+    color: ${colors.body.light};
     font-family: ${sequelSansBodyText.fontFamily};
     font-size: ${body.default.fontSize}px;
     font-weight: ${body.default.fontWeight};
     line-height: ${body.default.lineHeight}em;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: ${colors.background.dark};
+      color: ${colors.body.dark};
+    }
 
     @media screen and (min-width: ${breakpoints.md}px) {
       font-size: ${body.md.fontSize}px;
@@ -96,21 +103,21 @@ export default `
       a {
         text-decoration: none;
 
-        &:after {
-          background-image: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' height='100%' width='100%' viewBox='0 0 5.1 5.1'><polygon points='5.1,0 5.1,3.7 4.1,3.7 4.1,1.7 0.7,5.1 0,4.4 3.4,1 1.4,1 1.4,0'/></svg>");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          content: '';
-          margin-left: 0.3em;
-          padding-right: 0.5em;
+        svg {
+          fill: currentColor;
+          margin-left: 0.2em;
           position: relative;
-          top: -0.1em;
+          top: -0.3em;
+          width: 0.38em;
         }
       }
 
       &_title {
-        color: #a9a9a9;
+        color: ${colors.key.light};
+
+        @media (prefers-color-scheme: dark) {
+          color: ${colors.key.dark};
+        }
       }
     }
 

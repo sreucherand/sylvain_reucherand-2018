@@ -2,6 +2,7 @@ import keys from 'lodash/keys';
 import omit from 'lodash/omit';
 
 import * as breakpoints from '../variables/breakpoints';
+import * as colors from '../variables/colors';
 import * as grid from '../variables/grid';
 
 export default `
@@ -20,11 +21,15 @@ export default `
     }
 
     &_item {
-      color: #a9a9a9;
+      color: ${colors.key.light};
       left: 0;
       position: absolute;
       right: 0;
       top: 0;
+
+      @media (prefers-color-scheme: dark) {
+        color: ${colors.key.dark};
+      }
     }
   }
 
@@ -52,23 +57,31 @@ export default `
       svg {
         display: block;
         height: 20px;
-        stroke: #000000;
+        stroke: ${colors.body.light};
         width: 10px;
         transition: stroke 400ms;
+
+        @media (prefers-color-scheme: dark) {
+          stroke: ${colors.body.dark};
+        }
       }
 
       &__disabled {
         cursor: auto;
 
         svg {
-          stroke: #a9a9a9;
+          stroke: ${colors.disable.light};
+
+          @media (prefers-color-scheme: dark) {
+            stroke: ${colors.disable.dark};
+          }
         }
       }
     }
 
     @media screen and (min-width: ${breakpoints.sm}px) {
       &:before {
-        background-color: #efeeec;
+        background-color: ${colors.background.light};
         bottom: -1px;
         content: '';
         pointer-events: none;
@@ -77,6 +90,10 @@ export default `
         top: -1px;
         width: 50vw;
         z-index: -1;
+
+        @media (prefers-color-scheme: dark) {
+          background-color: ${colors.background.dark};
+        }
 
         ${keys(omit(grid.gutters, 'default'))
           .map(key => {
