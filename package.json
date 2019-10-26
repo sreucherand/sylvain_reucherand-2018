@@ -24,19 +24,6 @@
     "url": "https://github.com/sreucherand/sylvain_reucherand-2018/issues"
   },
   "homepage": "https://github.com/sreucherand/sylvain_reucherand-2018#readme",
-  "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.18.2"
-  },
   "dependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -84,5 +71,18 @@
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-node-externals": "^1.7.2",
     "workbox-webpack-plugin": "^4.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
+    "prettier": "^1.18.2"
   }
 }
