@@ -1,4 +1,5 @@
 const childProcess = require('child_process');
+const ffmpeg = require('ffmpeg-static');
 const mime = require('mime-types');
 const path = require('path');
 const request = require('request');
@@ -88,6 +89,9 @@ module.exports = {
 
         case 'text':
           return 'MetadataText';
+
+        default:
+          return null;
       }
     },
   },
@@ -133,6 +137,9 @@ module.exports = {
 
         case 'project':
           return 'Project';
+
+        default:
+          return null;
       }
     },
   },
@@ -160,7 +167,7 @@ module.exports = {
       }
 
       return new Promise((resolve, reject) => {
-        const ffmpeg = childProcess.spawn('ffmpeg', [
+        const ffmpegProcess = childProcess.spawn(ffmpeg, [
           '-i',
           media.url,
           '-loglevel',
@@ -178,7 +185,7 @@ module.exports = {
           'pipe:',
         ]);
 
-        ffmpeg.stdout.on('data', data => {
+        ffmpegProcess.stdout.on('data', data => {
           const base64 = cache.set(
             basename,
             `data:image/jpeg;base64,${data.toString('base64')}`
@@ -187,7 +194,7 @@ module.exports = {
           resolve(base64);
         });
 
-        ffmpeg.stderr.on('data', reject);
+        ffmpegProcess.stderr.on('data', reject);
       });
     },
     kind: () => 'video',
