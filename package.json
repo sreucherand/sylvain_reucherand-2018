@@ -30,7 +30,7 @@
     "dom-event": "^1.0.0",
     "emptyfunction": "^1.0.0",
     "escape-html": "^1.0.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-graphql": "^0.9.0",
     "ffmpeg-static": "^4.1.0",
     "fs-extra": "^8.1.0",
